@@ -1,0 +1,70 @@
+.mainhome{
+    height: 100vh;
+    background: #1C658C;
+}
+.home{
+    width: 60%;
+    display: flex;
+    margin: auto;
+    /* padding-top: 100px; */
+    justify-content: space-between;
+    height: 100%;
+}
+.flex{
+    display: flex;
+}
+img{
+    border-radius: 50%;
+}
+#righthome{
+    margin-top: 40px;
+}
+#greet{
+    font-size: 50px;
+}
+#name{
+    font-size: 70px;
+}
+#pro{
+    font-size: 20px;
+}
+#personal{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+#email{
+    margin-right: 10px;
+}
+#phone{
+    margin:0px 10px;
+    margin-left: 20px;
+}
+#expand_more{
+    font-size: 60px;
+    color: rgba(0, 0, 0, 0.534);
+}
+#expand{
+    position: fixed;
+    bottom:5px;
+    left: 50%;
+    animation: expanda 1s infinite;
+
+}
+@keyframes expanda {
+    0%{
+        color: rgba(128, 128, 128, 0.055);
+        left: 50%;
+        bottom: 40px;
+    }
+    10%{
+        color: rgb(0, 0, 0);
+        left: 50%;
+        bottom: 30px;
+    }
+    100%{
+        color: rgba(128, 128, 128, 0.041);
+        left: 50%;
+        bottom: 5px;
+    }
+}

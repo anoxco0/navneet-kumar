@@ -1,0 +1,61 @@
+.navbar{
+    align-items: flex-end;
+    background-color: #398AB9;
+    height: 70px;
+    width: 30%;
+    margin-top: 40px;
+    border-radius:  0px 35px 35px 0px;
+    position: fixed;
+}
+button{
+    padding: 5px 10px;
+    margin: 18px 5px;
+    font-size: 18px;
+    border: transparent;
+    background-color: transparent;
+}
+button:hover{
+    cursor: pointer;
+    color: #032030;
+    border-bottom: 3px solid #032030;
+}
+#bright{
+    background-color: transparent;
+}
+#day:hover{
+    padding: 10px;
+    cursor: pointer;
+    color: #1C658C;
+}
+
+@media only screen and (max-width:1175px){
+    .navbar{
+        height: 70px;
+        width: 45%;
+        margin: auto;
+        border-radius:  0px 0px 10px 10px;
+    }
+}
+@media only screen and (max-width:920px){
+    .navbar{
+        height: 60px;
+        width: 50%;
+    }
+    button{
+        font-size: 16px;
+        padding: 5px;
+    }
+}
+@media only screen and (max-width:670px){
+    .navbar{
+        height: 50px;
+        width: 70%;
+    }
+    button{
+        font-size: 14px;
+        padding:2px 5px;
+    }
+}
+@media only screen and (max-width:415px){
+
+}

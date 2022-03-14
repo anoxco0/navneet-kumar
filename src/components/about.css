@@ -1,0 +1,16 @@
+.about{
+    height: 100vh;
+    background: #2C3333;
+}
+#aboutme{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+}
+#aboutp{
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.788);
+    width: 60%;
+    margin: auto;
+    letter-spacing: 1px;
+}

@@ -1,0 +1,53 @@
+.skill{
+    height: 100vh;
+}
+.lang{
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.language{
+    position: relative;
+   animation: languagestack 12s infinite;
+   animation-direction: alternate;
+}
+@keyframes languagestack {
+    0%{
+        left: -10%;
+    }
+    100%{
+        left: 10%;
+    }
+}
+
+.frame{
+    position: relative;
+    animation: framework 15s infinite;
+    animation-direction: alternate-reverse;
+}
+@keyframes framework{
+    0%{left:-10%}
+    100%{left:10%}
+}
+.tools{
+    position: relative;
+    animation: tool 10s alternate infinite;
+}
+@keyframes tool {
+    0%{left: -10%;}
+    100%{left:10%}
+
+}
+#skil{
+    font-size:45px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+#skill{
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
