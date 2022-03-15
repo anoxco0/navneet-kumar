@@ -1,12 +1,12 @@
 import './landing.css'
-import { useState } from "react"
 import { About } from "./About";
 import { Home } from "./Home";
 import { Navbar } from "./Navbar"
 import { Skill } from './Skill';
+import { Project } from './Project';
+import { Contact } from './Contact';
 
 export const Landing = () => {
-    const [time, setTime] = useState(true);
     const idHandle = (data)=>{
          
     }
@@ -16,6 +16,8 @@ export const Landing = () => {
             <Home />
             <About />
             <Skill />
+            <Project />
+            <Contact />
         </div>
     )
 }

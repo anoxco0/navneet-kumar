@@ -8,6 +8,7 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    font-size: 20px;
 }
 .language{
     position: relative;
@@ -16,10 +17,10 @@
 }
 @keyframes languagestack {
     0%{
-        left: -10%;
+        left: -5%;
     }
     100%{
-        left: 10%;
+        left: 5%;
     }
 }
 
@@ -29,16 +30,16 @@
     animation-direction: alternate-reverse;
 }
 @keyframes framework{
-    0%{left:-10%}
-    100%{left:10%}
+    0%{left:-5%}
+    100%{left:5%}
 }
 .tools{
     position: relative;
     animation: tool 10s alternate infinite;
 } 
 @keyframes tool {
-    0%{left: -10%;}
-    100%{left:10%}
+    0%{left: -5%;}
+    100%{left:5%}
 
 }
 #skil{
@@ -50,4 +51,79 @@
     text-align: center;
     width: 80%;
     margin: auto;
+}
+
+#react{
+    position: relative;
+    animation: 3s linear 0s infinite spiner;
+}
+#reacts:hover{
+   color: #61DBFB;
+   cursor: pointer;
+   transition: all 0.5s;
+}
+@keyframes spiner {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+#javascript:hover{
+     color: #f0db4f;
+     transition: all 0.5s;
+     cursor: pointer;
+}
+#html:hover{
+    color: #e34c26;
+    transition: all 0.5s;
+     cursor: pointer;
+}
+#css:hover{
+    color: #264de4;
+    transition: all 0.5s;
+     cursor: pointer;
+}
+
+#node:hover{
+    color: #3C873A;
+    transition: all 0.5s;
+     cursor: pointer;
+}
+#express:hover{
+    color: #264de4;
+    transition: all 0.5s;
+     cursor: pointer;
+}
+#mongo:hover{
+    color: #419f39;
+    transition: all 0.5s;
+     cursor: pointer;
+}
+#redux:hover{
+    color: #764abc;
+    transition: all 0.5s;
+     cursor: pointer;
+}
+#post:hover{
+    color: #ef5b25;
+    transition: all 0.5s;
+     cursor: pointer;
+}
+#npm:hover{
+    color: #CC3534;
+    transition: all 0.5s;
+     cursor: pointer;
+}
+#git:hover{
+    color: #F1502F;
+    transition: all 0.5s;
+     cursor: pointer;
+}
+#dsa:hover{
+    color: #264de4;
+    transition: all 0.5s;
+     cursor: pointer;
 }
