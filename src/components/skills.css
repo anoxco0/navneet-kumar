@@ -35,7 +35,7 @@
 .tools{
     position: relative;
     animation: tool 10s alternate infinite;
-}
+} 
 @keyframes tool {
     0%{left: -10%;}
     100%{left:10%}

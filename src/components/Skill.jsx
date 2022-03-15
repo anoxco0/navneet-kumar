@@ -1,7 +1,13 @@
 import './skills.css'
 export const Skill = () =>{
     return (
-        <div className='skill'>
+        <div className='skill'
+        style={{
+            "background-color": "#485461",
+             "background":"linear-gradient(147deg, #485461 0%, #28313b 74%)",
+ 
+             }}
+        >
             <div style={{"height":"150px"}}></div>
           <div id='skill'>
               <div id='skil'>Skills</div>
@@ -71,3 +77,5 @@ export const Skill = () =>{
         </div>
     )
 }
+// background-color: #485461;
+// background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);

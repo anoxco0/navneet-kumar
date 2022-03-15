@@ -7,9 +7,12 @@ import { Skill } from './Skill';
 
 export const Landing = () => {
     const [time, setTime] = useState(true);
+    const idHandle = (data)=>{
+         
+    }
     return (
         <div>
-            <Navbar />
+            <Navbar idHandle={idHandle} />
             <Home />
             <About />
             <Skill />

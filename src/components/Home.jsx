@@ -3,7 +3,10 @@ import './home.css'
 
 export const Home = ()=>{
     return (
-        <div className='mainhome'>
+        <div className='mainhome' style={{
+           "background-color": "#000000",
+            "background":"linear-gradient(147deg, #000000 0%, #04619f 74%)",
+            }} >
             <div style={{"height":"150px"}}></div>
             <div className='home'>
             <div>
@@ -33,3 +36,6 @@ export const Home = ()=>{
         </div>
     )
 }
+
+// background-color: #abe9cd;
+// background-image: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
