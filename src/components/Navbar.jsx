@@ -17,7 +17,7 @@ export const Navbar=({idHandle})=>{
     return (
          <div >
            <div id='menu' onClick={handleNav}>
-              {nav?"":<span className="material-icons-outlined">menu</span>}
+              {nav?"":<span id='menui' className="material-icons-outlined">menu</span>}
            </div>
           <div
               className="navbar" 

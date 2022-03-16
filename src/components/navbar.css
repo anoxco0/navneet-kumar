@@ -78,7 +78,7 @@ button:hover{
         position: fixed;
         color: black;
     }
-    #span{
+    #span, #menui{
         font-size: 50px;
     }
     .navbar{
