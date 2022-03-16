@@ -11,13 +11,16 @@ export const Landing = () => {
          
     }
     return (
-        <div>
+        <div style={{
+            "backgroundColor": "#000000",
+             "backgroundImage":"linear-gradient(147deg, #000000 0%, #04619f 74%)",
+             }}>
             <Navbar idHandle={idHandle} />
             <Home />
             <About />
             <Skill />
-            <Project />
-            <Contact />
+            {/* <Project />
+            <Contact /> */}
         </div>
     )
 }

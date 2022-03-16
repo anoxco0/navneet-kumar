@@ -1,14 +1,19 @@
 .mainhome{
     height: 100vh;
-    background: #1C658C;
+}
+#hmain{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .home{
     width: 60%;
     display: flex;
     gap: 20px;
     margin: auto;
-    justify-content: space-between;
-    height: 100%;
+    justify-content: space-around;
 }
 .flex{
     display: flex;
@@ -84,4 +89,54 @@
     padding: 10px 30px;
     margin-top: 20px;
     border: transparent;
+}
+
+@media only screen and (max-width:1450px) {
+    .home{
+        width: 80%;
+    }
+}
+@media only screen and (max-width:1080px) {
+    .home{
+        width: 90%;
+    }
+}
+@media only screen and (max-width:980px) {
+    .home{
+        width: 100%;
+       display: grid;
+       align-items: center;
+       gap: 0px;
+    }
+    #profilediv{
+        margin: auto;
+    }
+    #profile{
+        height: 33vh;
+    }
+    #righthome{
+        text-align: center;
+    }
+    #personal{
+        width: 90%;
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+        margin-top: 50px;
+    }
+}
+@media only screen and (max-width:545px){
+    #unnec{
+        height: 50px;
+    }
+    #greet{
+        font-size: 30px;
+    }
+    #name{
+        font-size: 50px;
+    }
+    #personal{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

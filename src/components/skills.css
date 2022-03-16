@@ -1,54 +1,39 @@
 .skill{
     height: 100vh;
 }
+#skill{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+}
 .lang{
     width: 40%;
     margin: auto;
     text-align: center;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 20px;
     justify-content: space-between;
-    padding: 20px;
     font-size: 20px;
 }
-.language{
-    position: relative;
-   animation: languagestack 12s infinite;
-   animation-direction: alternate;
+.lang svg{
+    width: 75px;
+    height: 75px;
 }
-@keyframes languagestack {
-    0%{
-        left: -5%;
-    }
-    100%{
-        left: 5%;
-    }
-}
-
-.frame{
-    position: relative;
-    animation: framework 15s infinite;
-    animation-direction: alternate-reverse;
-}
-@keyframes framework{
-    0%{left:-5%}
-    100%{left:5%}
-}
-.tools{
-    position: relative;
-    animation: tool 10s alternate infinite;
-} 
-@keyframes tool {
-    0%{left: -5%;}
-    100%{left:5%}
-
+.lang>div{
+    transition: all 0.5s;
+     cursor: pointer;
 }
 #skil{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
     font-size:45px;
     font-weight: 700;
     margin-bottom: 20px;
 }
 #skill{
-    text-align: center;
     width: 80%;
     margin: auto;
 }
@@ -70,60 +55,72 @@
         transform: rotate(360deg);
     }
 }
-
 #javascript:hover{
      color: #f0db4f;
-     transition: all 0.5s;
-     cursor: pointer;
 }
 #html:hover{
     color: #e34c26;
-    transition: all 0.5s;
-     cursor: pointer;
 }
 #css:hover{
     color: #264de4;
-    transition: all 0.5s;
-     cursor: pointer;
 }
 
 #node:hover{
     color: #3C873A;
-    transition: all 0.5s;
-     cursor: pointer;
 }
 #express:hover{
     color: #264de4;
-    transition: all 0.5s;
-     cursor: pointer;
 }
 #mongo:hover{
     color: #419f39;
-    transition: all 0.5s;
-     cursor: pointer;
 }
 #redux:hover{
     color: #764abc;
-    transition: all 0.5s;
-     cursor: pointer;
 }
 #post:hover{
     color: #ef5b25;
-    transition: all 0.5s;
-     cursor: pointer;
 }
 #npm:hover{
     color: #CC3534;
-    transition: all 0.5s;
-     cursor: pointer;
 }
 #git:hover{
     color: #F1502F;
-    transition: all 0.5s;
-     cursor: pointer;
 }
 #dsa:hover{
     color: #264de4;
-    transition: all 0.5s;
-     cursor: pointer;
+}
+@media only screen and (max-width:1290px) {
+    .lang{
+        width: 50%;
+    }
+}
+@media only screen and (max-width:1150px) {
+    .lang{
+        width: 70%;
+    }
+}
+@media only screen and (max-width:800px) {
+    .lang{
+        width: 90%;
+    }
+}
+@media only screen and (max-width:500px) {
+    .lang{
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+    }
+    .lang svg{
+        width: 50px;
+        height: 50px;
+    }
+}
+@media only screen and (max-width:300px){
+    .lang{
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 10px;
+    }
+    .land svg{
+        width: 25px;
+        height: 25px;
+    }
 }
