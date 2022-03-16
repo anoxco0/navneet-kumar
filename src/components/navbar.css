@@ -64,9 +64,13 @@ button:hover{
 }
 @media only screen and (max-width:545px){
     #menu{
+        display: block;
+        top: 20px;
+        margin-left: 20px;
+        position: fixed;
         color: gray;
     }
-    #close, #menu{
+    #close{
         display: block;
         position: fixed;
         top: 20px;
