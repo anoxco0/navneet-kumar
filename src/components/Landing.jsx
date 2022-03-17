@@ -6,12 +6,13 @@ import { Skill } from './Skill';
 import { Project } from './Project';
 import { Contact } from './Contact';
 import { useEffect, useState } from 'react';
+import { Footer } from './Footer';
 
 export const Landing = () => {
     const [theme, setTheme] = useState(true)
 
     useEffect(()=>{
-        document.title=theme;
+        const some =theme;
     })
     const themeHandle = () =>{
         if(theme===true) return setTheme(false)
@@ -33,7 +34,8 @@ export const Landing = () => {
             <About />
             <Skill />
             <Project />
-            {/* <Contact /> */}
+            <Contact colors={theme?["#2a2a72","#009ffd"]:["#485461","#28313b"]}/>
+            <Footer colors={theme?["black","#009ffd"]:["white","#485461"]}/>
         </div>
     )
 }
