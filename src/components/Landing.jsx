@@ -5,17 +5,30 @@ import { Navbar } from "./Navbar"
 import { Skill } from './Skill';
 import { Project } from './Project';
 import { Contact } from './Contact';
+import { useEffect, useState } from 'react';
 
 export const Landing = () => {
-    const idHandle = (data)=>{
-         
+    const [theme, setTheme] = useState(true)
+
+    useEffect(()=>{
+        document.title=theme;
+    })
+    const themeHandle = () =>{
+        if(theme===true) return setTheme(false)
+        return setTheme(true);
     }
     return (
-        <div style={{
-            "backgroundColor": "#63a4ff",
-             "backgroundImage":"linear-gradient(deg, #63a4ff 0%, #83eaf1 74%)",
-             }}>
-            <Navbar idHandle={idHandle} />
+            <div style={{
+                "backgroundColor": theme?"#2a2a72":"#485461",
+                "backgroundImage":theme?"linear-gradient(315deg, #2a2a72 0%, #009ffd 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",
+            }}>
+            <div
+              onClick={themeHandle}
+            >
+                {theme?<span id='day' style={{"color":theme?"black":""}} className="material-icons-outlined">dark_mode</span>:
+                <span id='day' style={{"color":theme?"":"white"}} className="material-icons-outlined">light_mode</span>}
+            </div>
+            <Navbar />
             <Home />
             <About />
             <Skill />
@@ -25,5 +38,5 @@ export const Landing = () => {
     )
 }
 
-// background-color: #63a4ff;
-// background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
+// background-color: #485461;
+// background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);

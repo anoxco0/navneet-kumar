@@ -1,1 +1,9 @@
-   
+   #day{
+       cursor: pointer;
+       position: fixed;
+       width: 100%;
+       display: flex;
+       justify-content: flex-end;
+       margin: 5% -5%;
+       font-size: 30px;
+   }
