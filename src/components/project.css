@@ -1,4 +1,6 @@
-
+.project h1{
+    text-align: center;
+}
 #project1{
     border: 1px solid gray;
     width: 70%;
