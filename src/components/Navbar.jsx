@@ -4,10 +4,10 @@ import'./navbar.css'
 export const Navbar=({idHandle})=>{
     const [nav, setNav] = useState(true);
     const [matches, setMatches]=useState(
-       window.matchMedia("(min-width:546px)").matches
+       window.matchMedia("(min-width:670px)").matches
     )
     useEffect(()=>{
-       window.matchMedia("(min-width:545px)").addEventListener('change', e=>
+       window.matchMedia("(min-width:670px)").addEventListener('change', e=>
        setMatches(e.matches));
     },[])
     const handleNav = () => {

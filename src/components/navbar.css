@@ -53,16 +53,6 @@ button:hover{
     }
 }
 @media only screen and (max-width:670px){
-    .navbar{
-        height: 50px;
-        width: 70%;
-    }
-    button{
-        font-size: 14px;
-        padding:2px 5px;
-    }
-}
-@media only screen and (max-width:545px){
     #menu{
         display: block;
         top: 20px;
@@ -103,8 +93,6 @@ button:hover{
     }
     .navbar button{
         font-size: 40px;
-    }
-    .navbar button{
         padding: 5px;
         border: transparent;
         background-color: transparent;
@@ -112,5 +100,19 @@ button:hover{
     button:hover{
         color: #032030;
         border-bottom: 3px solid #032030;
+    }
+}
+@media only screen and (max-height:520px){
+    #span, #menui{
+        font-size: 25px;
+    }
+    .navbar button{
+        font-size: 18px;
+        padding: 0px;
+    }
+}
+@media only screen and (max-height:340px){
+    .navbar button{
+        margin: 7px;
     }
 }

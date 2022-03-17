@@ -64,3 +64,17 @@
         font-size:15px;
     }
 }
+@media only screen and (max-height:520px){
+    #aboutme{
+        font-size: 25px;
+        font-weight: 600;
+     }
+     #aboutp{
+        font-size:14px;
+    }
+}
+@media only screen and (max-height:400px){
+    .about{
+        height: 400px;
+    }
+}

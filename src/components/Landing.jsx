@@ -12,15 +12,18 @@ export const Landing = () => {
     }
     return (
         <div style={{
-            "backgroundColor": "#000000",
-             "backgroundImage":"linear-gradient(147deg, #000000 0%, #04619f 74%)",
+            "backgroundColor": "#63a4ff",
+             "backgroundImage":"linear-gradient(deg, #63a4ff 0%, #83eaf1 74%)",
              }}>
             <Navbar idHandle={idHandle} />
             <Home />
             <About />
             <Skill />
-            {/* <Project />
-            <Contact /> */}
+            <Project />
+            {/* <Contact /> */}
         </div>
     )
 }
+
+// background-color: #63a4ff;
+// background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);

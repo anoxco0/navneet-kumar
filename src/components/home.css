@@ -102,12 +102,7 @@
     }
 }
 @media only screen and (max-width:980px) {
-    .home{
-        width: 100%;
-       display: grid;
-       align-items: center;
-       gap: 0px;
-    }
+    
     #profilediv{
         margin: auto;
     }
@@ -125,9 +120,12 @@
         margin-top: 50px;
     }
 }
-@media only screen and (max-width:545px){
-    #unnec{
-        height: 50px;
+@media only screen and (max-width:600px){
+    .home{
+        width: 100%;
+       display: grid;
+       align-items: center;
+       gap: 0px;
     }
     #greet{
         font-size: 30px;
@@ -138,5 +136,39 @@
     #personal{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media only screen and (max-height:520px){
+    .home{
+        gap: 0px;
+    }
+    #greet{
+        font-size: 30px;
+    }
+    #name{
+        font-size: 40px;
+    }
+    #pro{
+        font-size: 20px;
+    }
+}
+@media only screen and (max-height:400px){
+    .mainhome{
+        height: 400px;
+    }
+    #profile{
+        height: 200px;
+    }
+    #hmain{
+        height: 400px;
+    }
+    #greet{
+        font-size: 20px;
+    }
+    #name{
+        font-size: 30px;
+    }
+    #pro{
+        font-size: 10px;
     }
 }
