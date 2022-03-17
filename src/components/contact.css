@@ -6,7 +6,9 @@
     padding: 50px 0px;
 }
 #contact{
+
     display: flex;
+    flex-direction: row;
     gap: 20px;
     justify-content: space-around;
 }
@@ -49,4 +51,21 @@
     background-color: aqua;
     border: transparent;
     cursor: pointer;
+}
+@media only screen and (max-width:600px){
+    #contact{
+        width: 80%;
+        margin: auto;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #cont>div{
+        display: flex;
+        justify-content: center;
+    }
+}
+@media only screen and (max-width:400px){
+    #contact{
+        width: 90%;
+    }
 }
