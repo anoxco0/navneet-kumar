@@ -3,8 +3,8 @@ import './contact.css'
 export const Contact = () =>{
     return (
         <div className='contact' style={
-            {"backgroundColor":" #000000",
-            "backgroundImage": "linear-gradient(147deg, #000000 0%, #2c3e50 74%)"}
+            {"backgroundColor":" #2a2a72",
+            "backgroundImage": "linear-gradient(315deg, #2a2a72 0%, #009ffd 74%)"}
         } >
             <div>Get in Touch</div>
             <form action="">
