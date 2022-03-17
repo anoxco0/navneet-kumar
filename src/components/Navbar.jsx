@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import'./navbar.css'
 
-export const Navbar=({idHandle})=>{
+export const Navbar=({colors})=>{
     const [nav, setNav] = useState(true);
     const [matches, setMatches]=useState(
        window.matchMedia("(min-width:670px)").matches
@@ -22,7 +22,8 @@ export const Navbar=({idHandle})=>{
           <div
               className="navbar" 
               style={{
-                 "backgroundImage": "linear-gradient(to right, rgba(255, 255, 255, 0.315), #398AB9)",
+               "backgroundColor": colors[0],
+               "backgroundImage":`linear-gradient(315deg, ${colors[0]} 0%, ${colors[1]} 74%)`,
                  "display":matches?"block":nav?"block":"none",
             }
             }>
@@ -31,19 +32,19 @@ export const Navbar=({idHandle})=>{
               {nav?<span id='span' className="material-icons-outlined">close</span>:""}
            </div>
             <button onClick={()=>{
-                  idHandle("home")
+                  ("home")
             }}>Home</button>
             <button onClick={()=>{
-               idHandle("about")
+               ("about")
             }}>About</button>
             <button onClick={()=>{
-               idHandle("skills")
+               ("skills")
             }}>Skills</button>
             <button onClick={()=>{
-               idHandle("projects")
+               ("projects")
             }}>Projects</button>
             <button onClick={()=>{
-               idHandle("contact");
+               ("contact");
             }}>contact</button>
           </div>
           </div>

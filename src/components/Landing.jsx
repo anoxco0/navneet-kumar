@@ -28,7 +28,7 @@ export const Landing = () => {
                 {theme?<span id='day' style={{"color":theme?"black":""}} className="material-icons-outlined">dark_mode</span>:
                 <span id='day' style={{"color":theme?"":"white"}} className="material-icons-outlined">light_mode</span>}
             </div>
-            <Navbar />
+            <Navbar colors={theme?["#2a2a72","#009ffd"]:["#485461","#28313b"]} />
             <Home />
             <About />
             <Skill />
