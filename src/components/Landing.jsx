@@ -66,15 +66,22 @@ export const Landing = () => {
         }
  
     }
-    const submitHandle=(e)=>{
+    const submitHandle=async(e)=>{
         e.preventDefault();
-        axios.post("https://anoxco0.herokuapp.com/users", {
-            email:form.email,
-            subject:form.subject,
-            message:form.message
-        }).then(()=>{
-            alert("thank for your messege");
-        })
+        if(form.email.length>10&&form.subject.length>2&&form.message.length>5){
+            console.log(form)
+            axios.post("https://anoxco0.herokuapp.com/users",{
+                "email":form.email,
+                "subject":form.subject,
+                "message":form.message
+            }).then(()=>alert("messege sent"));
+            document.getElementById('email').value="";
+            document.getElementById('subject').value="";
+            document.getElementById('message').value="";
+        }
+        else if(form.email.length<10) alert("enter a valid email")
+        else if(form.subject.length<=2) alert("subject should not empty")
+        else if(form.message.length<5) alert("messege shoud not empty")
     }
 
     return (
