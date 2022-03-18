@@ -26,9 +26,12 @@
     display: flex;
     justify-content: space-between;
 }
-#comp>button{
-    font-size: 20px;
+#comp a{
     width: 20%;
+}
+#comp button{
+    font-size: 20px;
+    width: 100%;
     padding: 5px 20px;
     border-radius: 4px;
     border: transparent;
@@ -103,7 +106,7 @@
         width: 25px;
         height: 25px;
     }
-    #comp>button{
+    #comp button{
         font-size: 16px;
         width: 20%;
         padding: 5px 10px;
@@ -128,7 +131,7 @@
     #stacks>div{
         margin: 5px;
      }
-     #comp>button{
+     #comp button{
         font-size: 14px;
         width: 20%;
         padding: 5px;
