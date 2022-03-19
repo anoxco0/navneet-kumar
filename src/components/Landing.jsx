@@ -99,7 +99,8 @@ export const Landing = () => {
             {/*---------------------------- navbar ---------------------------*/}
             <div >
            <div id='menu' onClick={handleNav}>
-              {nav?"":<span id='menui' style={{"color":theme?"Black":"white"}} className="material-icons-outlined">menu</span>}
+              {nav?"":<span id='menui' style={{"color":theme?"Black":"white"}}
+               className="material-icons-outlined">menu</span>}
            </div>
           <div
               className="navbar" 
