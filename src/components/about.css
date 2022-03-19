@@ -5,11 +5,12 @@
     justify-content: center;
     align-items: center;
 }
-#aboutme{
+#head{
     text-align: center;
     font-size: 50px;
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 #aboutp{
     display: flex;

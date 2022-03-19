@@ -26,13 +26,6 @@
     transition: all 0.5s;
      cursor: pointer;
 }
-#skil{
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    font-size:45px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
 #skill{
     width: 80%;
     margin: auto;

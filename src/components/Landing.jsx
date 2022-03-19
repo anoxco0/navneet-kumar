@@ -1,7 +1,7 @@
 import './landing.css'
 import'./navbar.css'
-import { useEffect, useState, useRef } from 'react';
-import image from './Navneet.jpg'
+import { useEffect, useState } from 'react';
+import image from './Navneet.png'
 import resumepng from './images/resume.png'
 import './home.css'
 import './about.css'
@@ -15,7 +15,7 @@ import axios from 'axios';
 
 
 export const Landing = () => {
-    const [theme, setTheme] = useState(true)
+    const [theme, setTheme] = useState(false)
     const [nav, setNav] = useState(true);
     const [form, setForm] = useState({
         email:"",
@@ -86,11 +86,11 @@ export const Landing = () => {
 
     return (
             <div style={{
-                "backgroundColor": theme?"#2a2a72":"#485461",
-                "backgroundImage":theme?"linear-gradient(315deg, #2a2a72 0%, #009ffd 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",
+                "backgroundColor": theme?"#b8c6db":"#485461",
+                "backgroundImage":theme?"linear-gradient(315deg, white 0%, gray 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",
+                "color":theme?"":"white"
             }}>
-            <div
-              onClick={themeHandle}
+            <div onClick={themeHandle}
             >
                 {theme?<span id='day' style={{"color":theme?"black":""}} className="material-icons-outlined">dark_mode</span>:
                 <span id='day' style={{"color":theme?"":"white"}} className="material-icons-outlined">light_mode</span>}
@@ -99,13 +99,13 @@ export const Landing = () => {
             {/*---------------------------- navbar ---------------------------*/}
             <div >
            <div id='menu' onClick={handleNav}>
-              {nav?"":<span id='menui' className="material-icons-outlined">menu</span>}
+              {nav?"":<span id='menui' style={{"color":theme?"Black":"white"}} className="material-icons-outlined">menu</span>}
            </div>
           <div
               className="navbar" 
               style={{
                 "backgroundColor": theme?"#2a2a72":"#485461",
-                "backgroundImage":theme?"linear-gradient(315deg, #2a2a72 0%, #009ffd 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",
+                "backgroundImage":theme?"linear-gradient(315deg, white 0%, gray 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",
                  "display":matches?"block":nav?"block":"none",
             }
             }>
@@ -113,19 +113,19 @@ export const Landing = () => {
           <button id='close' onClick={handleNav}>
               {nav?<span id='span' className="material-icons-outlined">close</span>:""}
            </button>
-            <button onClick={()=>{
+            <button style={{"color":theme?"black":"white"}} onClick={()=>{
                   executeScroll("Home")
             }}>Home</button>
-            <button onClick={()=>{
+            <button style={{"color":theme?"black":"white"}} onClick={()=>{
                executeScroll("About")
             }}>About</button>
-            <button onClick={()=>{
+            <button style={{"color":theme?"black":"white"}} onClick={()=>{
                executeScroll("Skill")
             }}>Skills</button>
-            <button onClick={()=>{
+            <button style={{"color":theme?"black":"white"}} onClick={()=>{
                executeScroll("Project")
             }}>Projects</button>
-            <button onClick={()=>{
+            <button style={{"color":theme?"black":"white"}} onClick={()=>{
                executeScroll("Contact");
             }}>contact</button>
           </div>
@@ -136,14 +136,22 @@ export const Landing = () => {
             <div id='Home'  className='mainhome' >
            <div id='hmain'>
            <div className='home'>
-            <div id='profilediv'>
-            <img id='profile' src={image} alt="Navneet Kumar" />
+            <div id='profilediv'
+            
+            
+            >
+            <img 
+               style={{
+                "backgroundColor": theme?"#2a2a72":"#485461",
+                "backgroundImage":theme?"linear-gradient(315deg, silver 0%, gray 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",
+                    }} 
+            id='profile' src={image} alt="Navneet Kumar" />
             </div>
             <div id='righthome'>
                 <div id='greet'>Hi, I'm</div>
                 <div id='name'>Navneet Kumar</div>
                 <div id='pro'>A Full Stack web Developer</div>
-                <a href={resumepng} download><button id='resume'>Resume</button></a>
+                    <button id='resume' onClick={()=>window.open(resumepng,"_blank")} >Resume</button>
             </div>
         </div>
            </div>
@@ -153,8 +161,10 @@ export const Landing = () => {
            {/* ----------------------------------about--------------------------  */}
         <div id='About' className='about' >
          <div>
-         <div id='aboutme'>About me</div>
-         <div id='aboutp'>
+         <div id='head'>About me</div>
+         <div style={{
+             "color":theme?"black":"white"
+         }} id='aboutp'>
           My name is Navneet Kumar, I'm a MERN stack Graduate from Masai School
                ,Banglore. I'm a MERN Stack Development enthusiast. I realise 
                within my first year in college I am interested in to pursue a
@@ -176,7 +186,7 @@ export const Landing = () => {
         <div id='Skill' className='skill'>
          <div id='skill'>
          <div>
-              <div id='skil'>Skills</div>
+              <div id='head'>Skills</div>
               <div className='lang language'>
                 <div id='html'>
                     <div><svg stroke="currentColor" fill="currentColor" strokeWidth="0" role="img" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><title></title><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"></path></svg></div>
@@ -242,15 +252,15 @@ export const Landing = () => {
         {/* ------------------------------------------project--------------------------- */}
         <div id='Project' className='project'>
                 <div style={{"height":"150px"}}></div>
-                <h1>Project</h1>
+                <div id='head'>Project</div>
             <div id='project1'>
             <div id='specp1'>
                <div><img id='Spec1' src={spec1} alt="" /></div>
                <div id='comp'>
-                   <a href="https://github.com/anoxco0/specmakers.git"><button>Code</button></a>
-                   <a href="https://specmakers.herokuapp.com/index.html"><button>Site</button></a>
-                   <a href="https://www.linkedin.com/posts/navneet-kumar-77186721b_project-masaischool-coding-ugcPost-6900148288457105408-o6OV?utm_source=linkedin_share&utm_medium=member_desktop_web"><button>Demo</button></a>
-                   <a href="https://medium.com/@poojayadav190618/specsmakers-clone-31c2b070c7fe"><button>Blog</button></a>
+                    <button onClick={()=>window.open('https://github.com/anoxco0/specmakers.git',"_blank")}>Code</button>
+                   <button onClick={()=>window.open("https://specmakers.herokuapp.com/index.html","_blank")}>Site</button>
+                   <button onClick={()=>window.open("https://www.linkedin.com/posts/navneet-kumar-77186721b_project-masaischool-coding-ugcPost-6900148288457105408-o6OV?utm_source=linkedin_share&utm_medium=member_desktop_web","_blank")}>Demo</button>
+                   <button onClick={()=>window.open("https://medium.com/@poojayadav190618/specsmakers-clone-31c2b070c7fe","_blank")}>Blog</button>
                </div>
              </div>
              <div id='specp2'>
@@ -278,10 +288,10 @@ export const Landing = () => {
             <div id='specp1'>
                <div><img id='Spec1' src={nykaa_home} alt="" /></div>
                <div id='comp'>
-                   <a href="https://github.com/anoxco0/Nykaa.git"><button>Code</button></a>
-                   <a href=""><button>Site</button></a>
-                   <a href="https://drive.google.com/file/d/1NqoT8v86ixR13mkRXF8-14D78h71M1EW/view?usp=sharing"><button>Demo</button></a>
-                   <a href=""><button>Blog</button></a>
+                   <button onClick={()=>window.open("https://github.com/anoxco0/Nykaa.git","_blank")}>Code</button>
+                   <button>Site</button>
+                   <button onClick={()=>window.open("https://drive.google.com/file/d/1NqoT8v86ixR13mkRXF8-14D78h71M1EW/view?usp=sharing","_blank")}>Demo</button>
+                   <button>Blog</button>
                </div>
              </div>
              <div id='specp2'>
@@ -307,9 +317,9 @@ export const Landing = () => {
         {/* ---------------------------------contact----------------------------- */}
         <div id='Contact' className='contact' style={{
                 "backgroundColor": theme?"#2a2a72":"#485461",
-                "backgroundImage":theme?"linear-gradient(315deg, #2a2a72 0%, #009ffd 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",}
+                "backgroundImage":theme?"linear-gradient(315deg, white 0%, gray 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",}
         } >
-            <div id='con'>contact</div>
+            <div id='head'>contact</div>
             <div id='contact'>
                 <div >
                     <div id='formlabel'> Send me a messege</div>
@@ -327,12 +337,8 @@ export const Landing = () => {
                    <div><span className="material-icons">call</span> <div>+91 7903259049</div></div>
                    <div><span className="material-icons-outlined">mail_outline</span> <div>navneetharsh3@gmail.com</div></div>
                    <div id='social'>
-                       <a href="https://www.linkedin.com/in/navneet-kumar-77186721b/">
-                       <div><svg id='linkedin' xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" className="global-nav__logo"><g><path d="M34,2.5v29A2.5,2.5,0,0,1,31.5,34H2.5A2.5,2.5,0,0,1,0,31.5V2.5A2.5,2.5,0,0,1,2.5,0h29A2.5,2.5,0,0,1,34,2.5ZM10,13H5V29h5Zm.45-5.5A2.88,2.88,0,0,0,7.59,4.6H7.5a2.9,2.9,0,0,0,0,5.8h0a2.88,2.88,0,0,0,2.95-2.81ZM29,19.28c0-4.81-3.06-6.68-6.1-6.68a5.7,5.7,0,0,0-5.06,2.58H17.7V13H13V29h5V20.49a3.32,3.32,0,0,1,3-3.58h.19c1.59,0,2.77,1,2.77,3.52V29h5Z" fill="currentColor"></path></g></svg></div>
-                       </a>
-                       <a href="https://github.com/anoxco0">
-                       <div><svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" className="octicon octicon-mark-github v-align-middle"><path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></div>
-                       </a>
+                       <div id='linkedin' onClick={()=>window.open("https://www.linkedin.com/in/navneet-kumar-77186721b/","_blank")}><svg id='linkedin' xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" className="global-nav__logo"><g><path d="M34,2.5v29A2.5,2.5,0,0,1,31.5,34H2.5A2.5,2.5,0,0,1,0,31.5V2.5A2.5,2.5,0,0,1,2.5,0h29A2.5,2.5,0,0,1,34,2.5ZM10,13H5V29h5Zm.45-5.5A2.88,2.88,0,0,0,7.59,4.6H7.5a2.9,2.9,0,0,0,0,5.8h0a2.88,2.88,0,0,0,2.95-2.81ZM29,19.28c0-4.81-3.06-6.68-6.1-6.68a5.7,5.7,0,0,0-5.06,2.58H17.7V13H13V29h5V20.49a3.32,3.32,0,0,1,3-3.58h.19c1.59,0,2.77,1,2.77,3.52V29h5Z" fill={theme?"black":"white"}></path></g></svg></div>
+                       <div id='git' onClick={()=>window.open("https://github.com/anoxco0","_blank")}><svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" className="octicon octicon-mark-github v-align-middle"><path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" fill={theme?"black":"white"}></path></svg></div>
                    </div>
                 </div>
             </div>
@@ -341,7 +347,7 @@ export const Landing = () => {
 
         {/* -------------------------------footer----------------------------------- */}
         
-        <div  className='footer' style={theme?{"color":"black", "backgroundColor":"#009ffd"}:{"color":"#FFFFFF", "backgroundColor":"#485461"}}>Created by Navneet Kumar | © 2022 All rights reserved</div>
+        <div  className='footer' style={theme?{"color":"black", "backgroundColor":"gray"}:{"color":"#FFFFFF", "backgroundColor":"#485461"}}>Created by Navneet Kumar | © 2022 All rights reserved</div>
 
         </div>
     )

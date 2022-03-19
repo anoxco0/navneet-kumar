@@ -42,7 +42,7 @@ button:hover{
         height: 60px;
         width: 50%;
     }
-    button{
+    .navbar button{
         font-size: 16px;
         padding: 5px;
     }

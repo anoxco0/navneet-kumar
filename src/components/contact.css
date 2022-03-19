@@ -1,12 +1,7 @@
-#con{
-    text-align: center;
-    font-size: 30px;
-}
 .contact{
     padding: 50px 0px;
 }
 #contact{
-
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -18,7 +13,11 @@
 }
 
 #linkedin{
+    cursor: pointer;
     margin-right: 20px;
+}
+#git{
+    cursor: pointer;
 }
 #cont>div{
     display: flex;
@@ -38,17 +37,21 @@
     flex-direction: column;
 }
 #form input{
+    border-radius: 5px;
    margin: 5px 0px;
    height: 25px;
+   border: 1px solid gray;
 }
 #form textarea{
+    border-radius: 5px;
     margin: 5px 0px;
     height: 100px;
 }
 #form button{
+    border-radius: 5px;
     margin: 5px;
     height: 30px;
-    background-color: aqua;
+    background-color: white;
     border: transparent;
     cursor: pointer;
 }
