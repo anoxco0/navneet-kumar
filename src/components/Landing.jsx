@@ -297,10 +297,10 @@ export const Landing = () => {
             <div id='specp1'>
                <div><img id='Spec1' src={nykaa_home} alt="" /></div>
                <div id='comp'>
-                   <button onClick={()=>window.open("https://github.com/anoxco0/nykaa-fashion.git","_blank")}>Code</button>
-                   <button onClick={()=>window.open("https://nykaa-fashion-five.vercel.app/","_blank")}>Site</button>
+                   {/* <button onClick={()=>window.open("https://github.com/anoxco0/nykaa-fashion.git","_blank")}>Code</button> */}
+                   {/* <button onClick={()=>window.open("https://nykaa-fashion-five.vercel.app/","_blank")}>Site</button> */}
                    <button onClick={()=>window.open("https://drive.google.com/file/d/1NqoT8v86ixR13mkRXF8-14D78h71M1EW/view?usp=sharing","_blank")}>Demo</button>
-                   <button onClick={()=>window.open("https://medium.com/@navneetharsh3/nykaa-fashion-clone-82266d65a3f2","_blank")}>Blog</button>
+                   {/* <button onClick={()=>window.open("https://medium.com/@navneetharsh3/nykaa-fashion-clone-82266d65a3f2","_blank")}>Blog</button> */}
                </div>
              </div>
              <div id='specp2'>
@@ -354,9 +354,7 @@ export const Landing = () => {
         {/* ---------------------------------contact----------------------------- */}
         <div id='Contact' className='contact'
         onScroll={(e)=>{handleScroll(e)}} 
-        // style={{ overflowY: 'scroll', maxHeight: '100vh',}}
         style={{
-            // overflowY: 'scroll', maxHeight: '100vh',
                 "backgroundColor": theme?"#2a2a72":"#485461",
                 "backgroundImage":theme?"linear-gradient(315deg, white 0%, gray 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",}
         } >
