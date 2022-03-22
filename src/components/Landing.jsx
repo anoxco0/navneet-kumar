@@ -14,6 +14,7 @@ import nykaa_home from './images/nykaa_homepage.png'
 import weather_app from './images/weatherapp.png'
 import axios from 'axios';
 import { css,keyframes } from 'styled-components';
+import { Hidden } from '@material-ui/core';
 
 
 export const Landing = () => {
@@ -60,16 +61,6 @@ export const Landing = () => {
        if(nav===true) return setNav(false)
       return setNav(true);
     }
-    const executeScroll=(id)=>{
-        const violation = document.getElementById(id); 
-        window.scrollTo({top:violation.offsetTop,
-            behavior:"smooth"
-        });
-        if(phone.matches){
-            setNav(false)
-        }
- 
-    }
     const submitHandle=async(e)=>{
         e.preventDefault();
         if(form.email.length>10&&form.subject.length>2&&form.message.length>5){
@@ -87,23 +78,31 @@ export const Landing = () => {
         else if(form.subject.length<=2) alert("subject should not empty")
         else if(form.message.length<5) alert("messege shoud not empty")
     }
+    
     const handleScroll = (e) => {
         const bottom = e.target.scrollHeight - e.target.scrollTop <= e.target.clientHeight+5;
+        console.log(bottom);
         if (bottom)   setScrol(false)
         if(e.target.scrollTop===0) setScrol(true)
-     }
-     const Gradien = keyframes`
-     0% {background-color:red}
-      100% {background-color:blue;}`
+    }
+    const executeScroll=(id)=>{
+        const violation = document.getElementById(id); 
+    //    console.log(violation)
+        window.scrollTo({top:violation.offsetTop,
+            behavior:"smooth"
+        });
+        if(phone.matches){
+            setNav(false)
+        }
+ 
+    }
 
-     const animation = ()=>
-     css`${Gradien} 0.2s infinite alternate`
 
     return (
             <div  
-            onScroll={(e)=>{handleScroll(e)}} 
+            // onScroll={(e)=>{handleScroll(e)}} 
             style={{
-                overflowY: 'scroll', maxHeight: '100vh',
+                // overflowY: 'scroll', maxHeight: '100vh',
                 "backgroundColor": theme?"#b8c6db":"#485461",
                 "backgroundImage":theme?"linear-gradient(315deg, white 0%, gray 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",
                 "color":theme?"":"white"
@@ -154,18 +153,16 @@ export const Landing = () => {
             
             {/* ------------------------------home--------------------------- */}
             <div id='Home'
+            // onScroll={(e)=>{handleScroll(e)}} 
+            // style={{ overflowY: 'scroll', maxHeight: '100vh',}}
              className='mainhome' >
            <div id='hmain'>
            <div className='home'>
-            <div id='profilediv'
-            
-            
-            >
+            <div id='profilediv'>
             <img 
                style={{
                 "backgroundColor": theme?"#2a2a72":"#485461",
                 "backgroundImage":theme?"linear-gradient(315deg, silver 0%, gray 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",
-                "animation":`${animation}`,
                     }} 
             id='profile' src={image} alt="Navneet Kumar" />
             </div>
@@ -177,7 +174,7 @@ export const Landing = () => {
             </div>
         </div>
            </div>
-        <div id='expand'>{scrol?<span id='expand_more' style={{color:theme?"rgba(0, 0, 0, 0.575)":"rgba(255, 255, 255, 0.562)"}} className="material-icons-outlined">expand_more</span>:<span style={{color:theme?"rgba(0, 0, 0, 0.575)":"rgba(255, 255, 255, 0.562)"}} id='expand_more' className="material-icons-outlined">expand_less</span>}</div>
+        {/* <div id='expand'>{scrol?<span id='expand_more' style={{color:theme?"rgba(0, 0, 0, 0.575)":"rgba(255, 255, 255, 0.562)"}} className="material-icons-outlined">expand_more</span>:<span style={{color:theme?"rgba(0, 0, 0, 0.575)":"rgba(255, 255, 255, 0.562)"}} id='expand_more' className="material-icons-outlined">expand_less</span>}</div> */}
         </div>
 
            {/* ----------------------------------about--------------------------  */}
@@ -357,7 +354,11 @@ export const Landing = () => {
         </div>
 
         {/* ---------------------------------contact----------------------------- */}
-        <div id='Contact' className='contact' style={{
+        <div id='Contact' className='contact'
+        onScroll={(e)=>{handleScroll(e)}} 
+        // style={{ overflowY: 'scroll', maxHeight: '100vh',}}
+        style={{
+            // overflowY: 'scroll', maxHeight: '100vh',
                 "backgroundColor": theme?"#2a2a72":"#485461",
                 "backgroundImage":theme?"linear-gradient(315deg, white 0%, gray 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",}
         } >
