@@ -300,7 +300,7 @@ export const Landing = () => {
                    <button onClick={()=>window.open("https://github.com/anoxco0/nykaa-fashion.git","_blank")}>Code</button>
                    <button onClick={()=>window.open("https://nykaa-fashion-five.vercel.app/","_blank")}>Site</button>
                    <button onClick={()=>window.open("https://drive.google.com/file/d/1NqoT8v86ixR13mkRXF8-14D78h71M1EW/view?usp=sharing","_blank")}>Demo</button>
-                   <button onClick={()=>window.open("https://medium.com/@navneetharsh3/nykaa-fashion-clone-82266d65a3f2","_blank")}>Blog</button>
+                   {/* <button onClick={()=>window.open("https://medium.com/@navneetharsh3/nykaa-fashion-clone-82266d65a3f2","_blank")}>Blog</button> */}
                </div>
              </div>
              <div id='specp2'>
