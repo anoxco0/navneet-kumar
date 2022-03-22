@@ -9,12 +9,12 @@
     justify-items: center;
 }
 .lang{
-    width: 40%;
+    width: 80%;
     margin: auto;
     text-align: center;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-row-gap: 20px;
+    grid-row-gap: 40px;
     justify-content: space-between;
     font-size: 20px;
 }

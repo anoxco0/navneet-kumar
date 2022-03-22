@@ -21,6 +21,15 @@
 #profile{
     border-radius: 50%;
 }
+  
+  @keyframes Gradient {
+    0% {
+    background-color: 0% 50%
+    }
+  100% {
+  background-position: 0% 50%
+  }
+  }
 #righthome{
     margin-top: 40px;
 }
@@ -49,27 +58,37 @@
     font-size: 60px;
     color: rgba(0, 0, 0, 0.534);
 }
+.col{
+    color: rgba(255, 255, 255, 0.562);
+    color: rgba(0, 0, 0, 0.575);
+}
 #expand{
-    position: fixed;
+    width: 100%;
     bottom:5px;
-    left: 50%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    /* left: 50%; */
     animation: expanda 1s infinite;
 
 }
 @keyframes expanda {
     0%{
         color: rgba(128, 128, 128, 0.055);
-        left: 50%;
+        /* left: 50%; */
+        text-align: center;
         bottom: 40px;
     }
     10%{
         color: rgb(0, 0, 0);
-        left: 50%;
+        /* left: 50%; */
+        text-align: center;
         bottom: 30px;
     }
     100%{
         color: rgba(128, 128, 128, 0.041);
-        left: 50%;
+        /* left: 50%; */
+        text-align: center;
         bottom: 5px;
     }
 }

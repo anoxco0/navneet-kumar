@@ -11,12 +11,16 @@ import './contact.css'
 import './footer.css';
 import spec1 from './images/Screenshot (838).png'
 import nykaa_home from './images/nykaa_homepage.png'
+import weather_app from './images/weatherapp.png'
 import axios from 'axios';
+import { css,keyframes } from 'styled-components';
 
 
 export const Landing = () => {
     const [theme, setTheme] = useState(false)
     const [nav, setNav] = useState(true);
+    const [scrol,setScrol]=useState(true);
+    const [profile, setProfile] = useState(false);
     const [form, setForm] = useState({
         email:"",
         subject:"",
@@ -83,9 +87,23 @@ export const Landing = () => {
         else if(form.subject.length<=2) alert("subject should not empty")
         else if(form.message.length<5) alert("messege shoud not empty")
     }
+    const handleScroll = (e) => {
+        const bottom = e.target.scrollHeight - e.target.scrollTop <= e.target.clientHeight+5;
+        if (bottom)   setScrol(false)
+        if(e.target.scrollTop===0) setScrol(true)
+     }
+     const Gradien = keyframes`
+     0% {background-color:red}
+      100% {background-color:blue;}`
+
+     const animation = ()=>
+     css`${Gradien} 0.2s infinite alternate`
 
     return (
-            <div style={{
+            <div  
+            onScroll={(e)=>{handleScroll(e)}} 
+            style={{
+                overflowY: 'scroll', maxHeight: '100vh',
                 "backgroundColor": theme?"#b8c6db":"#485461",
                 "backgroundImage":theme?"linear-gradient(315deg, white 0%, gray 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",
                 "color":theme?"":"white"
@@ -129,12 +147,14 @@ export const Landing = () => {
             <button style={{"color":theme?"black":"white"}} onClick={()=>{
                executeScroll("Contact");
             }}>contact</button>
+            
           </div>
           </div>
         </div>
             
             {/* ------------------------------home--------------------------- */}
-            <div id='Home'  className='mainhome' >
+            <div id='Home'
+             className='mainhome' >
            <div id='hmain'>
            <div className='home'>
             <div id='profilediv'
@@ -145,6 +165,7 @@ export const Landing = () => {
                style={{
                 "backgroundColor": theme?"#2a2a72":"#485461",
                 "backgroundImage":theme?"linear-gradient(315deg, silver 0%, gray 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",
+                "animation":`${animation}`,
                     }} 
             id='profile' src={image} alt="Navneet Kumar" />
             </div>
@@ -156,7 +177,7 @@ export const Landing = () => {
             </div>
         </div>
            </div>
-        <div id='expand'><span id='expand_more' className="material-icons-outlined">expand_more</span></div>
+        <div id='expand'>{scrol?<span id='expand_more' style={{color:theme?"rgba(0, 0, 0, 0.575)":"rgba(255, 255, 255, 0.562)"}} className="material-icons-outlined">expand_more</span>:<span style={{color:theme?"rgba(0, 0, 0, 0.575)":"rgba(255, 255, 255, 0.562)"}} id='expand_more' className="material-icons-outlined">expand_less</span>}</div>
         </div>
 
            {/* ----------------------------------about--------------------------  */}
@@ -166,19 +187,10 @@ export const Landing = () => {
          <div style={{
              "color":theme?"black":"white"
          }} id='aboutp'>
-          My name is Navneet Kumar, I'm a MERN stack Graduate from Masai School
-               ,Banglore. I'm a MERN Stack Development enthusiast. I realise 
-               within my first year in college I am interested in to pursue a
-                tech skills where I could learn How websites operate?, 
-                How apps operate?
+          My name is Navneet Kumar, I am a MERN stack Graduate from Masai School, Bengaluru. I'm a MERN Stack Development enthusiast. I realise 
+          within my first year in college, I am interested in pursuing tech skills where I could learn How websites operate?
           <br /> <br />
-          My long term goal goes on through small steps. first I will Master
-               in this field and I want to see myself as one of the best web 
-               Developer. I built a lot of web applications and worked in 2 
-               major collaborative projects in Masai School and Learned a lot
-                about communication, teamwork and leadership. After months of 
-                rigorous training, here I am looking for an opportunity as a full 
-                stack web Developer.
+          My long-term goal goes on through small steps. first I will Master this field and I want to see myself as one of the best web Developers. I built a lot of web applications and worked on 2 major collaborative projects in Masai School and Learned a lot about communication, teamwork, and leadership. After months of rigorous training, here I am looking for an opportunity as a full-stack web Developer.
          </div>
          </div>
         </div>
@@ -288,11 +300,11 @@ export const Landing = () => {
             <div id='project1'>
             <div id='specp1'>
                <div><img id='Spec1' src={nykaa_home} alt="" /></div>
-               <div id='comp'>
-                   <button onClick={()=>window.open("https://github.com/anoxco0/Nykaa.git","_blank")}>Code</button>
-                   <button>Site</button>
+               <div className='nykabtn'>
+                   {/* <button onClick={()=>window.open("https://github.com/anoxco0/Nykaa.git","_blank")}>Code</button> */}
+                   {/* <button>Site</button> */}
                    <button onClick={()=>window.open("https://drive.google.com/file/d/1NqoT8v86ixR13mkRXF8-14D78h71M1EW/view?usp=sharing","_blank")}>Demo</button>
-                   <button>Blog</button>
+                   {/* <button>Blog</button> */}
                </div>
              </div>
              <div id='specp2'>
@@ -312,6 +324,35 @@ export const Landing = () => {
                 </div>
              </div>
             </div>
+
+            <br />
+            <div id='project1'>
+            <div id='specp1'>
+               <div><img id='Spec1' src={weather_app} alt="" /></div>
+               <div id='comp'>
+                    <button onClick={()=>window.open('https://github.com/anoxco0/weather_app.git',"_blank")}>Code</button>
+                   <button onClick={()=>window.open("https://weather-app-anoxco0.vercel.app/","_blank")}>Site</button>
+               </div>
+             </div>
+             <div id='specp2'>
+                <h1>Weather app</h1>
+                <p>Weather app is a web application of weather.</p>
+                <p>That was a solo mini project.</p>
+                <p>I built this project using HTML,CSS and JavaScript Tech stacks
+                </p>
+                <div id='stack'>
+                    <div id='builtwith'>Built With:</div>
+                    <div id='stacks'>
+                        <div id='html'><svg stroke="currentColor" fill="currentColor" strokeWidth="0" role="img" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" ><title></title><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"></path></svg></div>
+                        <div id='css'><svg stroke="currentColor" fill="currentColor" strokeWidth="0" role="img" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" ><title></title><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"></path></svg></div>
+                        <div id='javascript'><svg stroke="currentColor" fill="currentColor" strokeWidth="0" role="img" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" ><title></title><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"></path></svg></div>
+                     </div>
+                </div>
+             </div>
+            </div>
+
+
+
             <div style={{"height":"150px"}}></div>
         </div>
 
@@ -320,14 +361,14 @@ export const Landing = () => {
                 "backgroundColor": theme?"#2a2a72":"#485461",
                 "backgroundImage":theme?"linear-gradient(315deg, white 0%, gray 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",}
         } >
-            <div id='head'>contact</div>
+            <div id='head'>Contact</div>
             <div id='contact'>
                 <div >
                     <div id='formlabel'> Send me a messege</div>
                     <form id='form' action="">
                         <input id='email' onChange={handleForm} type="email"  placeholder='Your email' />
                         <input id='subject' onChange={handleForm} type="text" placeholder='Subject' />
-                        <textarea onChange={handleForm} placeholder='Your message' name="" id="message" cols="30" rows="10"></textarea>
+                        <textarea style={{"resize":"none"}} onChange={handleForm} placeholder='Your message' name="" id="message" cols="30" rows="10"></textarea>
                         <button onClick={(e)=>{
                            submitHandle(e)
                         }} >Send Messege</button>
@@ -349,6 +390,7 @@ export const Landing = () => {
         {/* -------------------------------footer----------------------------------- */}
         
         <div  className='footer' style={theme?{"color":"black", "backgroundColor":"gray"}:{"color":"#FFFFFF", "backgroundColor":"#485461"}}>Created by Navneet Kumar | © 2022 All rights reserved</div>
+
 
         </div>
     )
