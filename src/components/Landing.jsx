@@ -267,10 +267,10 @@ export const Landing = () => {
             <div id='specp1'>
                <div><img id='Spec1' src={spec1} alt="" /></div>
                <div id='comp'>
-                    {/* <button onClick={()=>window.open('https://github.com/anoxco0/specmakers.git',"_blank")}>Code</button>
+                    <button onClick={()=>window.open('https://github.com/anoxco0/specmakers.git',"_blank")}>Code</button>
                    <button onClick={()=>window.open("https://specmakers.herokuapp.com/index.html","_blank")}>Site</button>
                    <button onClick={()=>window.open("https://www.linkedin.com/posts/navneet-kumar-77186721b_project-masaischool-coding-ugcPost-6900148288457105408-o6OV?utm_source=linkedin_share&utm_medium=member_desktop_web","_blank")}>Demo</button>
-                   <button onClick={()=>window.open("https://medium.com/@poojayadav190618/specsmakers-clone-31c2b070c7fe","_blank")}>Blog</button> */}
+                   <button onClick={()=>window.open("https://medium.com/@poojayadav190618/specsmakers-clone-31c2b070c7fe","_blank")}>Blog</button>
                </div>
              </div>
              <div id='specp2'>
@@ -297,10 +297,10 @@ export const Landing = () => {
             <div id='specp1'>
                <div><img id='Spec1' src={nykaa_home} alt="" /></div>
                <div id='comp'>
-                   <button onClick={()=>window.open("https://drive.google.com/file/d/1NqoT8v86ixR13mkRXF8-14D78h71M1EW/view?usp=sharing","_blank")}>Code</button>
-                   <button onClick={()=>window.open("https://drive.google.com/file/d/1NqoT8v86ixR13mkRXF8-14D78h71M1EW/view?usp=sharing","_blank")}>Site</button>
+                   <button onClick={()=>window.open("https://github.com/anoxco0/nykaa-fashion.git","_blank")}>Code</button>
+                   <button onClick={()=>window.open("nykaa-fashion-five.vercel.app","_blank")}>Site</button>
                    <button onClick={()=>window.open("https://drive.google.com/file/d/1NqoT8v86ixR13mkRXF8-14D78h71M1EW/view?usp=sharing","_blank")}>Demo</button>
-                   <button onClick={()=>window.open("https://drive.google.com/file/d/1NqoT8v86ixR13mkRXF8-14D78h71M1EW/view?usp=sharing","_blank")}>Blog</button>
+                   <button onClick={()=>window.open("https://medium.com/@navneetharsh3/nykaa-fashion-clone-82266d65a3f2","_blank")}>Blog</button>
                </div>
              </div>
              <div id='specp2'>
