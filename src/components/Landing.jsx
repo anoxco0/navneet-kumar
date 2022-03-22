@@ -277,8 +277,7 @@ export const Landing = () => {
                 <h1>Clone of Specmaker</h1>
                 <p>Specmaker is an e-commerce web application of eyeglasses and contact lenses</p>
                 <p>This is a collaborative project.</p>
-                <p>My area of responsibility in project to build the Home page, Product pages,
-                    reusable Navbar and the Api.
+                <p>My area of responsibility in this project is to build the Home page, Product pages, reusable Navbar, and the API.
                 </p>
                 <div id='stack'>
                     <div id='builtwith'>Built With:</div>
@@ -308,8 +307,7 @@ export const Landing = () => {
                 <h1>Clone of Nykaa Fashion</h1>
                 <p>Nykaa Fashion is an e-commerce web application of beuty, wellness and fashion products.</p>
                 <p>This is a collaborative project.</p>
-                <p>My area of responsibility in project was to build the Home page, Product pages, login, signup, wishlist and
-                    reusable Navbar.
+                <p>My area of responsibility in the project was to build the Home page, Product pages, login, signup, wishlist, and reusable Navbar.
                 </p>
                 <div id='stack'>
                     <div id='builtwith'>Built With:</div>
@@ -334,8 +332,8 @@ export const Landing = () => {
              <div id='specp2'>
                 <h1>Weather app</h1>
                 <p>Weather app is a web application of weather.</p>
-                <p>That was a solo mini project.</p>
-                <p>I built this project using HTML,CSS and JavaScript Tech stacks
+                <p>This a solo mini project.</p>
+                <p>I built this project using HTML, CSS, and JavaScript Tech stacks.
                 </p>
                 <div id='stack'>
                     <div id='builtwith'>Built With:</div>
