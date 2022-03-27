@@ -13,15 +13,11 @@ import spec1 from './images/Screenshot (838).png'
 import nykaa_home from './images/nykaa_homepage.png'
 import weather_app from './images/weatherapp.png'
 import axios from 'axios';
-import { css,keyframes } from 'styled-components';
-import { Hidden } from '@material-ui/core';
 
 
 export const Landing = () => {
     const [theme, setTheme] = useState(false)
     const [nav, setNav] = useState(true);
-    const [scrol,setScrol]=useState(true);
-    const [profile, setProfile] = useState(false);
     const [form, setForm] = useState({
         email:"",
         subject:"",
@@ -79,12 +75,6 @@ export const Landing = () => {
         else if(form.message.length<5) alert("messege shoud not empty")
     }
     
-    const handleScroll = (e) => {
-        const bottom = e.target.scrollHeight - e.target.scrollTop <= e.target.clientHeight+5;
-        console.log(bottom);
-        if (bottom)   setScrol(false)
-        if(e.target.scrollTop===0) setScrol(true)
-    }
     const executeScroll=(id)=>{
         const violation = document.getElementById(id); 
     //    console.log(violation)
@@ -104,7 +94,7 @@ export const Landing = () => {
             style={{
                 // overflowY: 'scroll', maxHeight: '100vh',
                 "backgroundColor": theme?"#b8c6db":"#485461",
-                "backgroundImage":theme?"linear-gradient(315deg, white 0%, gray 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",
+                "backgroundImage":theme?"linear-gradient(315deg, #f5f7fa 0%, #b8c6db 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",
                 "color":theme?"":"white"
             }}>
             <div onClick={themeHandle}
@@ -123,7 +113,7 @@ export const Landing = () => {
               className="navbar" 
               style={{
                 "backgroundColor": theme?"#2a2a72":"#485461",
-                "backgroundImage":theme?"linear-gradient(315deg, white 0%, gray 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",
+                "backgroundImage":theme?"linear-gradient(315deg, #f5f7fa 0%, #b8c6db 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",
                  "display":matches?"block":nav?"block":"none",
             }
             }>
@@ -153,8 +143,6 @@ export const Landing = () => {
             
             {/* ------------------------------home--------------------------- */}
             <div id='Home'
-            // onScroll={(e)=>{handleScroll(e)}} 
-            // style={{ overflowY: 'scroll', maxHeight: '100vh',}}
              className='mainhome' >
            <div id='hmain'>
            <div className='home'>
@@ -162,7 +150,7 @@ export const Landing = () => {
             <img 
                style={{
                 "backgroundColor": theme?"#2a2a72":"#485461",
-                "backgroundImage":theme?"linear-gradient(315deg, silver 0%, gray 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",
+                "backgroundImage":theme?"linear-gradient(315deg, #f5f7fa 0%, #b8c6db 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",
                     }} 
             id='profile' src={image} alt="Navneet Kumar" />
             </div>
@@ -170,7 +158,7 @@ export const Landing = () => {
                 <div id='greet'>Hi, I'm</div>
                 <div id='name'>Navneet Kumar</div>
                 <div id='pro'>A Full Stack web Developer</div>
-                    <button id='resume' onClick={()=>window.open(resumepng,"_blank")} >Resume</button>
+                <button id='resume' onClick={()=>window.open(resumepng,"_blank")} >Resume</button>
             </div>
         </div>
            </div>
@@ -351,10 +339,9 @@ export const Landing = () => {
 
         {/* ---------------------------------contact----------------------------- */}
         <div id='Contact' className='contact'
-        onScroll={(e)=>{handleScroll(e)}} 
         style={{
                 "backgroundColor": theme?"#2a2a72":"#485461",
-                "backgroundImage":theme?"linear-gradient(315deg, white 0%, gray 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",}
+                "backgroundImage":theme?"linear-gradient(315deg, #f5f7fa 0%, #b8c6db 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",}
         } >
             <div id='head'>Contact</div>
             <div id='contact'>
@@ -384,8 +371,8 @@ export const Landing = () => {
 
         {/* -------------------------------footer----------------------------------- */}
         
-        <div  className='footer' style={theme?{"color":"black", "backgroundColor":"gray"}:{"color":"#FFFFFF", "backgroundColor":"#485461"}}>Created by Navneet Kumar | © 2022 All rights reserved</div>
-
+        <div  className='footer' style={theme?{"color":"black", "backgroundColor":"#b8c6db"}:{"color":"#FFFFFF", "backgroundColor":"#485461"}}>Created by Navneet Kumar | © 2022 All rights reserved</div>
+        {/* (315deg, #f5f7fa 0%, #b8c6db 74%) */}
 
         </div>
     )
