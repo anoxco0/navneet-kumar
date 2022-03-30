@@ -92,7 +92,7 @@ export const Landing = () => {
             <div  
             // onScroll={(e)=>{handleScroll(e)}} 
             style={{
-                // overflowY: 'scroll', maxHeight: '100vh',
+                
                 "backgroundColor": theme?"#b8c6db":"#485461",
                 "backgroundImage":theme?"linear-gradient(315deg, #f5f7fa 0%, #b8c6db 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",
                 "color":theme?"":"white"
