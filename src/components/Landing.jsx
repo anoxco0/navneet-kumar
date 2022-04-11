@@ -1,19 +1,39 @@
 import './landing.css'
 import'./navbar.css'
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import image from './Navneet.png'
-import resumepng from './images/resume.png'
 import './home.css'
 import './about.css'
 import './skills.css'
 import './project.css'
 import './contact.css'
 import './footer.css';
+
+import uber1 from './images/Screenshot (910).png'
+import uber2 from './images/Screenshot (911).png'
+import uber3 from './images/Screenshot (912).png'
+import uber4 from './images/Screenshot (913).png'
+import uber5 from './images/Screenshot (914).png'
+import uber6 from './images/Screenshot (915).png'
+import uber7 from './images/Screenshot (916).png'
+import uber8 from './images/Screenshot (917).png'
+import uber9 from './images/Screenshot (918).png'
+
+
 import spec1 from './images/Screenshot (838).png'
-import nykaa_home from './images/nykaa_homepage.png'
+import spec2 from './images/Screenshot (839).png'
+import spec3 from './images/Screenshot (840).png'
+import spec4 from './images/Screenshot (841).png'
+import spec5 from './images/Screenshot (842).png'
+import spec6 from './images/Screenshot (843).png'
+
+import nykaa1 from './images/nykaa_homepage.png'
+import nykaa2 from './images/nykaa_signuppage.png'
+import nykaa3 from './images/nykaa_signInpage.png'
+import nykaa4 from './images/nykaa_cartpage.png'
+import nykaa5 from './images/nykaa_menpro.png'
 import weather_app from './images/weatherapp.png'
 import axios from 'axios';
-import uber1 from './images/uber1.png'
 
 
 export const Landing = () => {
@@ -87,11 +107,81 @@ export const Landing = () => {
         }
  
     }
+    
+    const slides = [spec1,spec2,spec3, spec4,spec5,spec6];
+    const nykaa=[nykaa1,nykaa2,nykaa3,nykaa4,nykaa5];
+    const uber = [uber1, uber2, uber3, uber4,uber5, uber6, uber7, uber8, uber9]
+    const delayUber = 3000;
+    const delaySlide = 3500;
+    const delayNykaa = 4000;
+        const [slideIndex, setSlideIndex] = useState(0);
+        const [nykaaIndex, setNykaaIndex] = useState(0);
+        const [uberIndex, setUberIndex] = useState(0)
+        const timeoutRefUber= useRef(null)
+        const timeoutRefslide = useRef(null);
+        const timeoutRefnykaa = useRef(null);
+      
+        function resetTimeoutuber() {
+            if (timeoutRefUber.current) {
+              clearTimeout(timeoutRefUber.current);
+            }
+          }
+        
+          useEffect(() => {
+            resetTimeoutuber();
+            timeoutRefUber.current = setTimeout(
+              () =>
+                setUberIndex((prevIndex) =>
+                  prevIndex === uber.length - 1 ? 0 : prevIndex + 1
+                ),
+              delayUber
+            );
+            return () => {
+              resetTimeoutuber();
+            };
+          }, [uberIndex]);
 
+        function resetTimeoutslide() {
+          if (timeoutRefslide.current) {
+            clearTimeout(timeoutRefslide.current);
+          }
+        }
+      
+        useEffect(() => {
+          resetTimeoutslide();
+          timeoutRefslide.current = setTimeout(
+            () =>
+              setSlideIndex((prevIndex) =>
+                prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+              ),
+            delaySlide
+          );
+          return () => {
+            resetTimeoutslide();
+          };
+        }, [slideIndex]);
+
+        function resetTimeoutnykaa() {
+            if (timeoutRefnykaa.current) {
+              clearTimeout(timeoutRefnykaa.current);
+            }
+          }
+        useEffect(() => {
+            resetTimeoutnykaa();
+            timeoutRefnykaa.current = setTimeout(
+              () =>
+                setNykaaIndex((prev) =>
+                prev === nykaa.length - 1 ? 0 : prev + 1
+                ),
+              delayNykaa
+            );
+            return () => {
+              resetTimeoutnykaa();
+            };
+          }, [nykaaIndex]);
 
     return (
             <div  
-            // onScroll={(e)=>{handleScroll(e)}} 
             style={{
                 
                 "backgroundColor": theme?"#b8c6db":"#485461",
@@ -116,6 +206,7 @@ export const Landing = () => {
                 "backgroundColor": theme?"#2a2a72":"#485461",
                 "backgroundImage":theme?"linear-gradient(315deg, #f5f7fa 0%, #b8c6db 74%)":"linear-gradient(315deg, #485461 0%, #28313b 74%)",
                  "display":matches?"block":nav?"block":"none",
+                 zIndex:2
             }
             }>
           <div>
@@ -253,8 +344,12 @@ export const Landing = () => {
                 <div style={{"height":"150px"}}></div>
                 <div id='head'>Project</div>
                 <div id='project1' style={{marginBottom:'20px'}}>
-                <div id='specp1'>
-                <div><img id='Spec1' src={uber1} alt="" /></div>
+                <div id='specp1' className='slideshow'>
+                <div className='slideshowSlider'style={{ transform: `translate3d(${-uberIndex * 100}%, 0, 0)` }}>
+                    {uber.map((el,index)=>(
+                        <img className="slide" id='Spec1' src={el} alt="" />
+                    ))}
+                </div>
                 <div id='comp'>
                         <button onClick={()=>window.open('https://github.com/anoxco0/ubereats-clone',"_blank")}>Code</button>
                     <button onClick={()=>window.open("http://ubereats-clone.herokuapp.com/","_blank")}>Site</button>
@@ -282,8 +377,12 @@ export const Landing = () => {
             </div>
 
             <div id='project1'>
-                <div id='specp1'>
-                <div><img id='Spec1' src={spec1} alt="" /></div>
+                <div id='specp1' className='slideshow'>
+                <div className='slideshowSlider'style={{ transform: `translate3d(${-slideIndex * 100}%, 0, 0)` }}>
+                    {slides.map((el,index)=>(
+                        <img className="slide" id='Spec1' src={el} alt="" />
+                    ))}
+                </div>
                 <div id='comp'>
                         <button onClick={()=>window.open('https://github.com/anoxco0/specmakers.git',"_blank")}>Code</button>
                     <button onClick={()=>window.open("https://specmakers.herokuapp.com/index.html","_blank")}>Site</button>
@@ -312,8 +411,14 @@ export const Landing = () => {
 
             <br />
             <div id='project1'>
-            <div id='specp1'>
-               <div><img id='Spec1' src={nykaa_home} alt="" /></div>
+            <div id='specp1' className='slideshow'>
+                <div className='slideshowSlider'style={{ transform: `translate3d(${-nykaaIndex * 100}%, 0, 0)` }}>
+                    {nykaa.map((el,index)=>(
+                        <img className="slide" id='Spec1' src={el} alt="" />
+                    ))}
+                </div>
+            {/* <div id='specp1'>
+               <div><img id='Spec1' src={nykaa_home} alt="" /></div> */}
                <div id='comp'>
                    <button onClick={()=>window.open("https://github.com/anoxco0/nykaa-fashion.git","_blank")}>Code</button>
                    <button onClick={()=>window.open("http://nykaa-fashion-five.vercel.app","_blank")}>Site</button>
@@ -340,8 +445,12 @@ export const Landing = () => {
 
             <br />
             <div id='project1'>
-            <div id='specp1'>
-               <div><img id='Spec1' src={weather_app} alt="" /></div>
+            <div id='specp1' className='slideshow'>
+                <div className='slideshowSlider'>
+                        <img className="slide" id='Spec1' src={weather_app} alt="" />
+                </div>
+            {/* <div id='specp1'>
+               <div><img id='Spec1' src={weather_app} alt="" /></div> */}
                <div id='comp'>
                     <button onClick={()=>window.open('https://github.com/anoxco0/weather_app.git',"_blank")}>Code</button>
                    <button onClick={()=>window.open("https://weather-app-anoxco0.vercel.app/","_blank")}>Site</button>
