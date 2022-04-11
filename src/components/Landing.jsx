@@ -159,7 +159,7 @@ export const Landing = () => {
                 <div id='greet'>Hi, I'm</div>
                 <div id='name'>Navneet Kumar</div>
                 <div id='pro'>A Full Stack web Developer</div>
-                <button id='resume' onClick={()=>window.open(resumepng,"_blank")} >Resume</button>
+                <button id='resume' onClick={()=>window.open("https://www.canva.com/design/DAE3Z7lVdkI/VYb34her85kUx47y5F-Hhw/view?utm_content=DAE3Z7lVdkI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton","_blank")} >Resume</button>
             </div>
         </div>
            </div>
