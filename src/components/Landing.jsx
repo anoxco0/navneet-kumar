@@ -34,7 +34,7 @@ import nykaa4 from './images/nykaa_cartpage.png'
 import nykaa5 from './images/nykaa_menpro.png'
 import weather_app from './images/weatherapp.png'
 import axios from 'axios';
-
+import Resume from './navneet_kumar_resume.pdf'
 
 export const Landing = () => {
     const [theme, setTheme] = useState(false)
@@ -250,7 +250,7 @@ export const Landing = () => {
                 <div id='greet'>Hi, I'm</div>
                 <div id='name'>Navneet Kumar</div>
                 <div id='pro'>A Full Stack web Developer</div>
-                <button id='resume' onClick={()=>window.open("https://www.canva.com/design/DAE3Z7lVdkI/VYb34her85kUx47y5F-Hhw/view?utm_content=DAE3Z7lVdkI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton","_blank")} >Resume</button>
+                <button id='resume' onClick={()=>window.open(Resume,"_blank")} >Resume</button>
             </div>
         </div>
            </div>
