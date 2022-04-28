@@ -33,10 +33,13 @@ import nykaa3 from './images/nykaa_signInpage.png'
 import nykaa4 from './images/nykaa_cartpage.png'
 import nykaa5 from './images/nykaa_menpro.png'
 import weather_app from './images/weatherapp.png'
-import axios from 'axios';
 import Resume from './navneet_kumar_resume.pdf'
+import { useDispatch, useSelector } from 'react-redux';
+import { sendMessage } from '../redux/action';
 
 export const Landing = () => {
+    const dispatch= useDispatch();
+    const {loading} = useSelector(state=>state.sendMessage);
     const [theme, setTheme] = useState(false)
     const [nav, setNav] = useState(true);
     const [form, setForm] = useState({
@@ -78,27 +81,16 @@ export const Landing = () => {
        if(nav===true) return setNav(false)
       return setNav(true);
     }
-    const submitHandle=async(e)=>{
-        e.preventDefault();
-        if(form.email.length>10&&form.subject.length>2&&form.message.length>5){
-            console.log(form)
-            axios.post("https://anoxco0.herokuapp.com/users",{
-                "email":form.email,
-                "subject":form.subject,
-                "message":form.message
-            }).then(()=>alert("messege sent"));
+    const submitHandle=(e)=>{
+       e.preventDefault();
+        dispatch(sendMessage({email:form.email, subject:form.subject, message:form.message}));
             document.getElementById('email').value="";
             document.getElementById('subject').value="";
             document.getElementById('message').value="";
-        }
-        else if(form.email.length<10) alert("enter a valid email")
-        else if(form.subject.length<=2) alert("subject should not empty")
-        else if(form.message.length<5) alert("messege shoud not empty")
     }
     
     const executeScroll=(id)=>{
         const violation = document.getElementById(id); 
-    //    console.log(violation)
         window.scrollTo({top:violation.offsetTop,
             behavior:"smooth"
         });
@@ -490,9 +482,10 @@ export const Landing = () => {
                         <input id='email' onChange={handleForm} type="email"  placeholder='Your email' />
                         <input id='subject' onChange={handleForm} type="text" placeholder='Subject' />
                         <textarea style={{"resize":"none"}} onChange={handleForm} placeholder='Your message' name="" id="message" cols="30" rows="10"></textarea>
-                        <button onClick={(e)=>{
+                        {loading?<button>wait...</button>:<button onClick={(e)=>{
                            submitHandle(e)
-                        }} >Send Messege</button>
+                        }} >Send Messege</button>}
+                        
                     </form>
                 </div>
                 <div id='cont'>
