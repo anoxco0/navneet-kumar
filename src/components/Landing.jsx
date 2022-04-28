@@ -482,7 +482,7 @@ export const Landing = () => {
                         <input id='email' onChange={handleForm} type="email"  placeholder='Your email' />
                         <input id='subject' onChange={handleForm} type="text" placeholder='Subject' />
                         <textarea style={{"resize":"none"}} onChange={handleForm} placeholder='Your message' name="" id="message" cols="30" rows="10"></textarea>
-                        {loading?<button>wait...</button>:<button onClick={(e)=>{
+                        {loading?<button style={{cursor:"not-allowed", pointerEvents:"none"}} className='loading_btn'><div>wait</div><div className='loading_'></div></button>:<button onClick={(e)=>{
                            submitHandle(e)
                         }} >Send Messege</button>}
                         
