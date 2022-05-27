@@ -17,7 +17,7 @@ export const send_error = ()=>({
 
 export const sendMessage = ({email, subject, message})=>(dispatch)=>{
     dispatch(loading())
-        fetch(`https://anoxco0.herokuapp.com/users`,{
+        fetch(`https://anoxco0.herokuapp.com/users`,{mode:'cors'},{
           method:"post",
           body:JSON.stringify({
               email:email,

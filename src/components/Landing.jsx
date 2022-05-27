@@ -39,7 +39,7 @@ import { sendMessage } from '../redux/action';
 
 export const Landing = () => {
     const dispatch= useDispatch();
-    const {loading} = useSelector(state=>state.sendMessage);
+    const {message,loading} = useSelector(state=>state.sendMessage);
     const [theme, setTheme] = useState(false)
     const [nav, setNav] = useState(true);
     const [form, setForm] = useState({
@@ -79,6 +79,7 @@ export const Landing = () => {
     }
     const handleNav = () => {
        if(nav===true) return setNav(false)
+
       return setNav(true);
     }
     const submitHandle=(e)=>{
@@ -87,8 +88,9 @@ export const Landing = () => {
             document.getElementById('email').value="";
             document.getElementById('subject').value="";
             document.getElementById('message').value="";
+            console.log(message)
     }
-    
+    // console.log(message)
     const executeScroll=(id)=>{
         const violation = document.getElementById(id); 
         window.scrollTo({top:violation.offsetTop,
@@ -242,7 +244,7 @@ export const Landing = () => {
                 <div id='greet'>Hi, I'm</div>
                 <div id='name'>Navneet Kumar</div>
                 <div id='pro'>A Full Stack web Developer</div>
-                <button id='resume' onClick={()=>window.open(Resume,"_blank")} >Resume</button>
+                <button id='resume' onClick={()=>window.open("https://drive.google.com/file/d/1y7ZQjKyC_U8i2B9InqmfSEYhzaUFSBPd/view?usp=sharing","_blank")} >Resume</button>
             </div>
         </div>
            </div>
