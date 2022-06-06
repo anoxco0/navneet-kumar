@@ -15,18 +15,20 @@ export const send_error = ()=>({
     type:ERROR
 })
 
-export const sendMessage = ({email, subject, message})=>(dispatch)=>{
+export const sendMessage = ({email, subject, message, longitude, latitude})=>(dispatch)=>{
     dispatch(loading())
-        fetch(`https://anoxco0.herokuapp.com/users`,{mode:'cors'},{
+        fetch(`https://anoxco0.herokuapp.com/users`,{
           method:"post",
           body:JSON.stringify({
               email:email,
               subject:subject,
-              message:message
+              message:message,
+              latitude:latitude,
+              longitude:longitude
             }),
           headers:{
               "Content-Type":"application/json"
           }
         }).then(res=>res.json()).then((res)=>{dispatch(success({message:res.message})); alert(res.message)})
-        .catch(error=>dispatch(send_error()))
+        .catch(error=>{dispatch(send_error()); console.log(error.message)})
 }
