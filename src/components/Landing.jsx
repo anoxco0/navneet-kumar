@@ -46,22 +46,22 @@ export const Landing = () => {
         email:"",
         subject:"",
         message:"",
-        longitude:"",
-        latitude:""
+        // longitude:"",
+        // latitude:""
     })
-    getLocation();
-    function getLocation(){
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-          } else { 
-           console.log("Geolocation is not supported by this browser.");
-          }
-    }
-    function showPosition(position){
-        const longitude = position.coords.longitude;
-        const latitude = position.coords.latitude;
-        setForm({...form, longitude:longitude, latitude:latitude});
-    }
+    // getLocation();
+    // function getLocation(){
+    //     if (navigator.geolocation) {
+    //         navigator.geolocation.getCurrentPosition(showPosition);
+    //       } else { 
+    //        console.log("Geolocation is not supported by this browser.");
+    //       }
+    // }
+    // function showPosition(position){
+    //     const longitude = position.coords.longitude;
+    //     const latitude = position.coords.latitude;
+    //     setForm({...form, longitude:longitude, latitude:latitude});
+    // }
     const [matches, setMatches]=useState(
        window.matchMedia("(min-width:670px)").matches
     )
@@ -98,7 +98,7 @@ export const Landing = () => {
     }
     const submitHandle=(e)=>{
        e.preventDefault();
-        dispatch(sendMessage({email:form.email, subject:form.subject, message:form.message, latitude:form.latitude, longitude:form.longitude}));
+        dispatch(sendMessage({email:form.email, subject:form.subject, message:form.message}));
             document.getElementById('email').value="";
             document.getElementById('subject').value="";
             document.getElementById('message').value="";

@@ -15,7 +15,7 @@ export const send_error = ()=>({
     type:ERROR
 })
 
-export const sendMessage = ({email, subject, message, longitude, latitude})=>(dispatch)=>{
+export const sendMessage = ({email, subject, message})=>(dispatch)=>{
     dispatch(loading())
         fetch(`https://anoxco0.herokuapp.com/users`,{
           method:"post",
@@ -23,8 +23,6 @@ export const sendMessage = ({email, subject, message, longitude, latitude})=>(di
               email:email,
               subject:subject,
               message:message,
-              latitude:latitude,
-              longitude:longitude
             }),
           headers:{
               "Content-Type":"application/json"
