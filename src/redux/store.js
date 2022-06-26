@@ -1,23 +1,30 @@
-import { applyMiddleware, combineReducers, compose, createStore } from "redux";
+import {
+  applyMiddleware,
+  combineReducers,
+  compose,
+  createStore
+} from "redux";
+
 import thunk from "redux-thunk";
-import { sendReducer } from "./reducer";
 
+import {
+  sendReducer
+} from "./contact/reducer";
+import { homeReducer } from "./home/reducer";
 
+const composeEnhancers =
+  typeof window === 'object' &&
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
 
-const composeEnhancers = 
-typeof window === 'object' &&
-window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?   
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-    // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
-  }) : compose;
-
-  const middleware = [thunk]
+const middleware = [thunk]
 
 const enhancer = composeEnhancers(
-applyMiddleware(...middleware),
-// other store enhancers if any
+  applyMiddleware(...middleware),
 );
+
 const rootReducer = combineReducers({
-    sendMessage:sendReducer,
+  sendMessage: sendReducer,
+  home:homeReducer,
 })
 export const store = createStore(rootReducer, enhancer)
