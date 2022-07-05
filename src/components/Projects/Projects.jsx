@@ -44,6 +44,7 @@ import { CSS } from "../svg/CSS";
 import { JavaScript } from "../svg/JavaScript";
 
 import "./projects.css";
+import { Firebase } from "../svg/Firebase";
 
 export const Projects = () => {
   const sandesh = [sandesh1, sandesh2, sandesh3, sandesh4, sandesh5, sandesh6, sandesh7, sandesh8, sandesh9];
@@ -63,27 +64,25 @@ export const Projects = () => {
   const timeoutRefslide = useRef(null);
   const timeoutRefnykaa = useRef(null);
   const projects = [
-    // {
-    //   images: sandesh,
-    //   code: "https://github.com/anoxco0/sandesh",
-    //   site: "http://ubereats-clone.herokuapp.com/",
-    //   demo: "https://drive.google.com/file/d/1lVeW-frYUli1Jf25ErfxQ399oZmm_EON/view?usp=sharing",
-    //   blog: "https://medium.com/@navneetharsh3/uber-eats-clone-b8894f480dbb",
-    //   heading: "Clone of Uber Eats",
-    //   paragraphs: [
-    //     "Uber Eats is an online food ordering and delivery platform. Users can read menus, reviews and ratings, order, and pay for food",
-    //     "This is a collaborative project.",
-    //     "My area of responsibility in this project is to build the Home page, Login and Signup Page, reusable Navbar, and the API.",
-    //   ],
-    //   stacks: [
-    //     { stack: <MongoDB />, id: "mongo" },
-    //     { stack: <Express />, id: "express" },
-    //     { stack: <React />, id: "react" },
-    //     { stack: <NodeJs />, id: "node" },
-    //     { stack: <Redux />, id: "redux" },
-    //   ],
-    //   index:uberIndex
-    // },
+    {
+      images: sandesh,
+      code: "https://github.com/anoxco0/sandesh",
+      site: "https://sandesh-navneet.netlify.app/authentication/",
+      demo: "https://drive.google.com/file/d/1cTwF-7G_--R9jIzmtOgP2BbkK0tTxVFN/view?usp=sharing",
+      // blog: "https://medium.com/@navneetharsh3/uber-eats-clone-b8894f480dbb",
+      heading: "Sandesh - a chat app",
+      paragraphs: [
+        "Sandesh is a chat app. where user can login, signup, live chat and personal chat.",
+        "This is a solo project.",
+        "I build this project by using firebase.",
+      ],
+      stacks: [
+        { stack: <React />, id: "react" },
+        { stack: <Redux />, id: "redux" },
+        {stack:<Firebase/>, id:"firebase"}
+      ],
+      index:sandeshIndex
+    },
     {
       images: uber,
       code: "https://github.com/anoxco0/ubereats-clone",
@@ -163,12 +162,33 @@ export const Projects = () => {
     }
   ];
  
+  function resetTimeoutsandesh() {
+    if (timeoutRefSandesh.current) {
+      clearTimeout(timeoutRefSandesh.current);
+    }
+  }
 
+  useEffect(() => {
+    resetTimeoutsandesh();
+    timeoutRefSandesh.current = setTimeout(
+      () =>
+        setSandeshIndex((prevIndex) =>
+          prevIndex === sandesh.length - 1 ? 0 : prevIndex + 1
+        ),
+      delaysandesh
+    );
+    return () => {
+      resetTimeoutsandesh();
+    };
+  }, [sandesh.length, sandeshIndex]);
+  
   function resetTimeoutuber() {
     if (timeoutRefUber.current) {
       clearTimeout(timeoutRefUber.current);
     }
   }
+
+
 
   useEffect(() => {
     resetTimeoutuber();
