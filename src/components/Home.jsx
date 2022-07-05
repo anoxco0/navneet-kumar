@@ -8,6 +8,8 @@ import { Skills } from "./Skills/Skills";
 import { Projects } from "./Projects/Projects";
 import { Contact } from "./Contact/Contact";
 import { Footer } from "./Footer/Footer";
+import {Night} from "./svg/Night";
+import {Day} from "./svg/Day"
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -29,23 +31,15 @@ export const Home = () => {
         color: theme ? "" : "white",
       }}
     >
-      <div onClick={themeHandle}>
+      <div onClick={themeHandle} style={{display:"flex",position:"fixed", left:"95%", top:"8vh"}}>
         {theme ? (
-          <span
-            id="day"
-            style={{ color: theme ? "black" : "" }}
-            className="material-icons-outlined"
-          >
-            dark_mode
-          </span>
+           <div style={{width:"30px"}}>
+             <Night/>
+           </div>
         ) : (
-          <span
-            id="day"
-            style={{ color: theme ? "" : "white" }}
-            className="material-icons-outlined"
-          >
-            light_mode
-          </span>
+         <div style={{width:"30px"}}>
+          <Day/>
+         </div>
         )}
       </div>
       <Navbar />
