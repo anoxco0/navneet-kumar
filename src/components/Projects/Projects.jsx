@@ -34,6 +34,12 @@ import nykaa4 from "../images/nykaa_cartpage.png";
 import nykaa5 from "../images/nykaa_menpro.png";
 import weather_app from "../images/weatherapp.png";
 
+import port1 from "../images/Screenshot (1033).png";
+import port2 from "../images/Screenshot (1034).png";
+import port3 from "../images/Screenshot (1035).png";
+import port4 from "../images/Screenshot (1036).png";
+import port5 from "../images/Screenshot (1037).png";
+
 import { MongoDB } from "../svg/MongoDB";
 import { Express } from "../svg/Express";
 import { React } from "../svg/React";
@@ -51,18 +57,22 @@ export const Projects = () => {
   const slides = [spec1, spec2, spec3, spec4, spec5, spec6];
   const nykaa = [nykaa1, nykaa2, nykaa3, nykaa4, nykaa5];
   const uber = [uber1, uber2, uber3, uber4, uber5, uber6, uber7, uber8, uber9];
+  const port = [port1, port2, port3, port4, port5];
   const delaysandesh = 3000;
   const delayUber = 3500;
   const delaySlide = 4000;
   const delayNykaa = 4500;
+  const delayport = 5000;
   const [sandeshIndex, setSandeshIndex] = useState(0);
   const [slideIndex, setSlideIndex] = useState(0);
   const [nykaaIndex, setNykaaIndex] = useState(0);
   const [uberIndex, setUberIndex] = useState(0);
+  const [portIndex, setPortIndex] = useState(0);
   const timeoutRefSandesh = useRef(null);
   const timeoutRefUber = useRef(null);
   const timeoutRefslide = useRef(null);
   const timeoutRefnykaa = useRef(null);
+  const timeoutRefport = useRef(null);
   const projects = [
     {
       images: sandesh,
@@ -79,6 +89,7 @@ export const Projects = () => {
       stacks: [
         { stack: <React />, id: "react" },
         { stack: <Redux />, id: "redux" },
+        {stack:<CSS/>, id:"css"},
         {stack:<Firebase/>, id:"firebase"}
       ],
       index:sandeshIndex
@@ -101,6 +112,7 @@ export const Projects = () => {
         { stack: <React />, id: "react" },
         { stack: <NodeJs />, id: "node" },
         { stack: <Redux />, id: "redux" },
+        {stack:<CSS/>, id:"css"},
       ],
       index:uberIndex
     },
@@ -159,6 +171,23 @@ export const Projects = () => {
         { stack: <CSS />, id: "css" },
         { stack: <JavaScript />, id: "javascript" },
       ],
+    },
+    {
+      images: port,
+      code: "https://github.com/anoxco0/navneet-kumar",
+      site: "https://navneet-kumar.vercel.app/",
+      heading: "Portfolio - Navneet Kumar",
+      paragraphs: [
+        "This is my Portfolio.",
+        "I build this web application myself.",
+        "I build this project by using react, redux, redux-thunk and css.",
+      ],
+      stacks: [
+        { stack: <React />, id: "react" },
+        { stack: <Redux />, id: "redux" },
+        {stack:<CSS/>, id:"css"}
+      ],
+      index:portIndex
     }
   ];
  
@@ -239,6 +268,22 @@ export const Projects = () => {
       resetTimeoutnykaa();
     };
   }, [nykaa.length, nykaaIndex]);
+
+  function resetTimeoutport() {
+    if (timeoutRefport.current) {
+      clearTimeout(timeoutRefport.current);
+    }
+  }
+  useEffect(() => {
+    resetTimeoutport();
+    timeoutRefport.current = setTimeout(
+      () => setPortIndex((prev) => (prev === port.length - 1 ? 0 : prev + 1)),
+      delayport
+    );
+    return () => {
+      resetTimeoutnykaa();
+    };
+  }, [port.length, portIndex]);
 
   return (
     <div id="Project" className="project">
