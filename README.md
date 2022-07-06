@@ -1,6 +1,25 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is build with [Create React App](https://github.com/facebook/create-react-app).
+
+
+##  Portfolio - Navneet Kumar
+
+This is Portfolio app made using ReactJs, CSS, and Redux.
+<br>
+<strong>##Web App</strong>.
+<br>
+Live here --> https://navneet-kumar.vercel.app/
+<br>
+
+<strong>##ScreenShot</strong>
+
+<br>
+<a href="https://ibb.co/dmDvzn"><img src="https://navneet-kumar.vercel.app/static/media/Screenshot%20(1033).d3d4a426d49a7d170a67.png" height="500" weight="200" alt="Portfolio - Navneet Kumar" border="0"></a>
+<br>
+ This is basically my first app made using ReactJs, Redux, and CSS so there's a lot of room for improvements.
+
+
 
 ## Available Scripts
 
