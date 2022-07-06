@@ -10,6 +10,12 @@ import sandesh7 from "../images/Screenshot (1056).png"
 import sandesh8 from "../images/Screenshot (1057).png"
 import sandesh9 from "../images/Screenshot (1058).png"
 
+import weather1 from "../images/Screenshot (1063).png"
+import weather2 from "../images/Screenshot (1064).png"
+import weather3 from "../images/Screenshot (1065).png"
+import weather4 from "../images/Screenshot (1066).png"
+import weather5 from "../images/Screenshot (1067).png"
+
 import uber1 from "../images/Screenshot (910).png";
 import uber2 from "../images/Screenshot (911).png";
 import uber3 from "../images/Screenshot (912).png";
@@ -54,21 +60,25 @@ import { Firebase } from "../svg/Firebase";
 
 export const Projects = () => {
   const sandesh = [sandesh1, sandesh2, sandesh3, sandesh4, sandesh5, sandesh6, sandesh7, sandesh8, sandesh9];
+  const weather = [weather1, weather2, weather3, weather4, weather5]
   const slides = [spec1, spec2, spec3, spec4, spec5, spec6];
   const nykaa = [nykaa1, nykaa2, nykaa3, nykaa4, nykaa5];
   const uber = [uber1, uber2, uber3, uber4, uber5, uber6, uber7, uber8, uber9];
   const port = [port1, port2, port3, port4, port5];
   const delaysandesh = 3000;
-  const delayUber = 3500;
-  const delaySlide = 4000;
-  const delayNykaa = 4500;
-  const delayport = 5000;
+  const delayWeather=3500;
+  const delayUber = 4000;
+  const delaySlide = 4500;
+  const delayNykaa = 4000;
+  const delayport = 3500;
   const [sandeshIndex, setSandeshIndex] = useState(0);
+  const [weatherIndex, setWeatherIndex] = useState(0);
   const [slideIndex, setSlideIndex] = useState(0);
   const [nykaaIndex, setNykaaIndex] = useState(0);
   const [uberIndex, setUberIndex] = useState(0);
   const [portIndex, setPortIndex] = useState(0);
   const timeoutRefSandesh = useRef(null);
+  const timeoutRefWeather = useRef(null);
   const timeoutRefUber = useRef(null);
   const timeoutRefslide = useRef(null);
   const timeoutRefnykaa = useRef(null);
@@ -77,9 +87,8 @@ export const Projects = () => {
     {
       images: sandesh,
       code: "https://github.com/anoxco0/sandesh",
-      site: "https://sandesh-navneet.netlify.app/authentication/",
+      site: "https://sandesh-navneet.netlify.app",
       demo: "https://drive.google.com/file/d/1cTwF-7G_--R9jIzmtOgP2BbkK0tTxVFN/view?usp=sharing",
-      // blog: "https://medium.com/@navneetharsh3/uber-eats-clone-b8894f480dbb",
       heading: "Sandesh - a chat app",
       paragraphs: [
         "Sandesh is a chat app. where user can login, signup, live chat and personal chat.",
@@ -93,6 +102,24 @@ export const Projects = () => {
         {stack:<Firebase/>, id:"firebase"}
       ],
       index:sandeshIndex
+    },
+    {
+      images: weather,
+      code: "https://github.com/anoxco0/weatherapp",
+      site: "https://weatherapp-navneet.netlify.app/",
+      demo: "https://drive.google.com/file/d/1UHdFliVgrqPluhlQ8zltooo-Q3ZLuOg8/view?usp=sharing",
+      heading: "Weather app - ReactJs",
+      paragraphs: [
+        "This is a weather app where app takes one permission for loacation and give all weather data related to that place. user can also search for city as he/her wish.",
+        "This is a solo project.",
+        "I build this project by using ReactJs, Redux, Redux-thunk, CSS.",
+      ],
+      stacks: [
+        { stack: <React />, id: "react" },
+        { stack: <Redux />, id: "redux" },
+        {stack:<CSS/>, id:"css"},
+      ],
+      index:weatherIndex
     },
     {
       images: uber,
@@ -160,7 +187,7 @@ export const Projects = () => {
       images: [weather_app],
       code: "https://github.com/anoxco0/weather_app.git",
       site: "https://weather-app-anoxco0.vercel.app/",
-      heading: "Weather app",
+      heading: "Weather app ",
       paragraphs: [
         "Weather app is a web application of weather.",
         "This a solo mini project.",
@@ -210,6 +237,26 @@ export const Projects = () => {
       resetTimeoutsandesh();
     };
   }, [sandesh.length, sandeshIndex]);
+
+  function resetTimeoutWeather() {
+    if (timeoutRefWeather.current) {
+      clearTimeout(timeoutRefWeather.current);
+    }
+  }
+
+  useEffect(() => {
+    resetTimeoutWeather();
+    timeoutRefWeather.current = setTimeout(
+      () =>
+        setWeatherIndex((prevIndex) =>
+          prevIndex === weather.length - 1 ? 0 : prevIndex + 1
+        ),
+      delayWeather
+    );
+    return () => {
+      resetTimeoutWeather();
+    };
+  }, [weather.length, weatherIndex]);
   
   function resetTimeoutuber() {
     if (timeoutRefUber.current) {
