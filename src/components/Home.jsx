@@ -67,7 +67,7 @@ export const Home = () => {
                 id="resume"
                 onClick={() =>
                   window.open(
-                    "https://drive.google.com/file/d/1y7ZQjKyC_U8i2B9InqmfSEYhzaUFSBPd/view?usp=sharing",
+                    "https://drive.google.com/file/d/1S3aDW8lrid0zPRXgSu-k88eMrxDRVtrk/view?usp=sharing",
                     "_blank"
                   )
                 }
