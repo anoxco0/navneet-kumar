@@ -81,7 +81,7 @@ export const Contact = ()=>{
                     submitHandle(e);
                   }}
                 >
-                  Send Messege
+                  Send a Message
                 </button>
               )}
             </form>

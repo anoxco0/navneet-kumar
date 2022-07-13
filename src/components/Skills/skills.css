@@ -31,22 +31,10 @@
     margin: auto;
 }
 
-#react{
-    position: relative;
-    animation: 3s linear 0s infinite spiner;
-}
 #reacts:hover{
    color: #61DBFB;
    cursor: pointer;
    transition: all 0.5s;
-}
-@keyframes spiner {
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
 }
 #javascript:hover{
      color: #f0db4f;

@@ -109,7 +109,7 @@ export const Navbar = () => {
               executeScroll("Contact");
             }}
           >
-            contact
+            Contact
           </button>
         </div>
       </div>
