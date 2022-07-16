@@ -62,7 +62,7 @@ export const Home = () => {
             <div id="righthome">
               <div id="greet">Hi, I'm</div>
               <div id="name">Navneet Kumar</div>
-              <div id="pro">A Full Stack web Developer</div>
+              <div id="pro">A Full-Stack Web Developer</div>
               <button
                 id="resume"
                 onClick={() =>
