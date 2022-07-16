@@ -10,7 +10,6 @@ import sandesh7 from "../images/Screenshot (1056).png"
 import sandesh8 from "../images/Screenshot (1057).png"
 import sandesh9 from "../images/Screenshot (1058).png"
 
-import weather1 from "../images/Screenshot (1063).png"
 import weather2 from "../images/Screenshot (1064).png"
 import weather3 from "../images/Screenshot (1065).png"
 import weather4 from "../images/Screenshot (1066).png"
@@ -53,7 +52,7 @@ import { Firebase } from "../svg/Firebase";
 
 export const Projects = () => {
   const sandesh = [sandesh1, sandesh2, sandesh3, sandesh4, sandesh5, sandesh6, sandesh7, sandesh8, sandesh9];
-  const weather = [weather1, weather2, weather3, weather4, weather5]
+  const weather = [weather2, weather3, weather4, weather5]
   const slides = [spec1, spec2, spec3, spec4, spec5, spec6];
   const nykaa = [nykaa1, nykaa2, nykaa3, nykaa4, nykaa5];
   const uber = [uber1, uber2, uber3, uber4, uber5, uber6, uber7, uber8, uber9];
@@ -278,14 +277,14 @@ export const Projects = () => {
       <div style={{ height: "150px" }}></div>
       <div id="head">Projects</div>
       {projects.map((Element, i) => (
-        <div id="project1" style={{ marginBottom: "20px" }}>
+        <div id="project1" style={{ marginBottom: "20px" }} key={Element.code+i}>
           <div id="specp1" className="slideshow">
             <div
               className="slideshowSlider"
               style={{ transform: Element.index?`translate3d(${-Element.index * 100}%, 0, 0)`:"" }}
             >
               {Element.images.length>1?Element.images.map((el, index) => (
-                <img className="slide" id="Spec1" src={el} alt="" />
+                <img className="slide" id="Spec1" src={el} alt="" key={el+index} />
               )):<img className="slide" id="Spec1" src={Element.images[0]} alt="" />}
             </div>
             <div id="comp">
@@ -321,14 +320,14 @@ export const Projects = () => {
           </div>
           <div id="specp2">
             <h1>{Element.heading}</h1>
-            {Element.paragraphs.map((ele) => (
-              <p>{ele}</p>
+            {Element.paragraphs.map((ele, inde) => (
+              <p key={ele+inde}>{ele}</p>
             ))}
             <div id="stack">
               <div id="builtwith">Built With:</div>
               <div id="stacks">
-                {Element.stacks.map((ele) => (
-                  <div id={ele.id}>{ele.stack}</div>
+                {Element.stacks.map((ele , ind) => (
+                  <div key={ele.stack+ind} id={ele.id}>{ele.stack}</div>
                 ))}
               </div>
             </div>
