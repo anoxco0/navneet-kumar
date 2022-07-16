@@ -1,9 +1,7 @@
 .about{
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 #head{
     text-align: center;
@@ -14,9 +12,6 @@
 }
 #aboutp{
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
-    /* border: 1px solid green; */
     font-size: 25px;
     color: rgba(255, 255, 255, 0.788);
     width: 60%;

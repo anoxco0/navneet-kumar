@@ -1,12 +1,10 @@
 .skill{
-    height: 100vh;
+    margin-top: 120px;
 }
 #skill{
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    justify-items: center;
 }
 .lang{
     width: 80%;
