@@ -278,7 +278,7 @@ export const Projects = () => {
       <div style={{ height: "150px" }}></div>
       <div id="head">Projects</div>
       {projects.map((Element, i) => (
-        <div id="project1" style={{ marginBottom: "20px" }} key={Element.code+i} onMouseOver={(e)=>console.log(e)}>
+        <div id="project1" style={{ marginBottom: "20px" }} key={Element.code+i} >
           <div id="specp1" className="slideshow" style={{position:'relative'}}>
           {/* <div style={{position:'absolute', zIndex:"2", }}><ArrowLeft/></div>
           <div style={{position:'absolute', zIndex:2, margin:'30% 0 0 calc(100% - 24px)'}}><ArrowRight/></div> */}
