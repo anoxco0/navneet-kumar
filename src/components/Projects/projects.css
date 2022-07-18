@@ -14,7 +14,9 @@
     display: flex;
     gap: 20px;
     border-radius: 10px;
+    position: relative;
 }
+
 #specp1{
     width: 70%;
 }

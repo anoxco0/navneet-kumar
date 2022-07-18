@@ -50,6 +50,7 @@ import { JavaScript } from "../svg/JavaScript";
 import "./projects.css";
 import { Firebase } from "../svg/Firebase";
 
+
 export const Projects = () => {
   const sandesh = [sandesh1, sandesh2, sandesh3, sandesh4, sandesh5, sandesh6, sandesh7, sandesh8, sandesh9];
   const weather = [weather2, weather3, weather4, weather5]
@@ -113,7 +114,7 @@ export const Projects = () => {
     {
       images: uber,
       code: "https://github.com/anoxco0/ubereats-clone",
-      site: "http://ubereats-clone.herokuapp.com/",
+      site: "https://ubereats-clone.herokuapp.com/",
       demo: "https://drive.google.com/file/d/1lVeW-frYUli1Jf25ErfxQ399oZmm_EON/view?usp=sharing",
       blog: "https://medium.com/@navneetharsh3/uber-eats-clone-b8894f480dbb",
       heading: "Clone of Uber Eats",
@@ -277,16 +278,19 @@ export const Projects = () => {
       <div style={{ height: "150px" }}></div>
       <div id="head">Projects</div>
       {projects.map((Element, i) => (
-        <div id="project1" style={{ marginBottom: "20px" }} key={Element.code+i}>
-          <div id="specp1" className="slideshow">
+        <div id="project1" style={{ marginBottom: "20px" }} key={Element.code+i} onMouseOver={(e)=>console.log(e)}>
+          <div id="specp1" className="slideshow" style={{position:'relative'}}>
+          {/* <div style={{position:'absolute', zIndex:"2", }}><ArrowLeft/></div>
+          <div style={{position:'absolute', zIndex:2, margin:'30% 0 0 calc(100% - 24px)'}}><ArrowRight/></div> */}
             <div
               className="slideshowSlider"
-              style={{ transform: Element.index?`translate3d(${-Element.index * 100}%, 0, 0)`:"" }}
+              style={{ transform: Element.index?`translate3d(${-Element.index * 100}%, 0, 0)`:""}}
             >
               {Element.images.length>1?Element.images.map((el, index) => (
                 <img className="slide" id="Spec1" src={el} alt="" key={el+index} />
-              )):<img className="slide" id="Spec1" src={Element.images[0]} alt="" />}
+              )):""}
             </div>
+            
             <div id="comp">
               {Element.code ? (
                 <button onClick={() => window.open(Element.code, "_blank")}>
